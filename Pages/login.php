@@ -7,21 +7,29 @@
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
 
+session_start();
+// Als je bent ingelogd, stuur je naar het dashboard.
+if (isset($_SESSION["userid"])) {
+    echo "<script>window.location.href = 'dashboard.php';</script>";
+    exit();
+}
+
+// Foutmeldingen weergeven op de login pagina
 if(isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
-        echo "<div class='popup1'> One or more required fields are empty. Please complete all fields to continue. </div>";
+        echo "<div class='popup1'> ❌ Één of meer verplichte velden zijn leeg. Vul alstublieft alle velden in om verder te gaan. </div>";
     } else if ($_GET["error"] == "wrongLogin") {
-        echo "<div class='popup1'> The email address or password is incorrect. Please check your information and try again. </div>";
+        echo "<div class='popup1'> ❌ Het e-mailadres of wachtwoord is onjuist. Controleer uw informatie en probeer het opnieuw. </div>";
     } else if ($_GET["error"] == "stmtfailed") {
-        echo "<div class='popup1'> Something went wrong, please try again later. </div>";
+        echo "<div class='popup1'> ⚠️ Er is iets misgegaan. Probeer het later alstublieft opnieuw. </div>";
     } else if ($_GET["error"] == "wrongWay") {
-        echo "<div class='popup1'> You have accessed this page incorrectly. Please use the form to proceed. </div>";
+        echo "<div class='popup1'> ⚠️ U hebt deze pagina op onjuiste wijze bereikt. Gebruik het formulier om verder te gaan. </div>";
     } else if ($_GET["error"] == "uitgelogd") {
-        echo "<div class='popup2'> You have successfully logged out. </div>";
+        echo "<div class='popup2'> ✅ U bent succesvol uitgelogd. </div>";
     } else if ($_GET["error"] == "none") {
-        echo "<div class='popup2'> Account successfully created. Please log in now. </div>";
+        echo "<div class='popup2'> ✅ Account succesvol aangemaakt. Log nu in. </div>";
     } else if ($_GET["error"] == "notLoggedIn") {
-        echo "<div class='popup1'> You must be logged in to access the dashboard. Please log in first. </div>";
+        echo "<div class='popup1'> 🔐 U moet ingelogd zijn om het dashboard te openen. Log alstublieft eerst in. </div>";
     }
 }
 
