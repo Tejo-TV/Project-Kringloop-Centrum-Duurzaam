@@ -13,7 +13,7 @@ if (!isset($_SESSION["userid"])) {
     exit();
 }
 
-require_once '../../Config/database.php';
+require_once '../../Config/DB_connect.php';
 require_once 'components/functions.inc.php';
 
 $db = new Database();
@@ -41,19 +41,17 @@ $voorraad = haalAlleVoorraad($conn);
         <table>
             <thead>
                 <tr>
-                    <th>Artikel</th>
-                    <th>Aantal</th>
-                    <th>Locatie</th>
-                    <th>Status</th>
+                    <th>ID</th>
+                    <th>Omschrijving</th>
+                    <th>Hoeveelheid</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($voorraad as $item): ?>
                     <tr>
-                        <td><?= htmlspecialchars($item['artikel_naam']) ?></td>
-                        <td><?= $item['aantal'] ?></td>
-                        <td><?= htmlspecialchars($item['locatie']) ?></td>
-                        <td><?= htmlspecialchars($item['status_naam']) ?></td>
+                        <td><?= htmlspecialchars($item['ID']) ?></td>
+                        <td><?= $item['Omschrijving'] ?></td>
+                        <td><?= htmlspecialchars($item['Hoeveelheid']) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -65,6 +63,6 @@ $voorraad = haalAlleVoorraad($conn);
 </html>
         <p>Geen artikelen in voorraad.</p>
     <?php endif; ?>
-    
+
 </body>
 </html>
