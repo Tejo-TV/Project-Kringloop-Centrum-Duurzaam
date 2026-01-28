@@ -25,6 +25,50 @@ if (isset($_SESSION["userid"])) {
     <link rel="stylesheet" href="../assets/CSS/Style.css" />
 </head>
 <body>
+        <!-- Header -->
+    <header>
+        <a href="index.php">Kringloop centrum</a>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Ritten</a>
+            <a href="#">Klantgegevens</a>
+            <a href="#">Voorraadbeheer</a>
+            <a href="#">Opbrengst</a>
+            <a href="#">Medewerkers</a>
+            <a class="header-button" href="pages/components/logout.inc.php">Aanmelden</a>
+        </nav>
+    </header>
+
+    <!-- Body -->
+    <div class="dashboard">
+        <div class="dashboard-content">
+            <h1>Ritten</h1>
+            <p>Beschrijving</p>
+            <a href="#">Ga naar Ritten</a>
+        </div>
+        <div class="dashboard-content">
+            <h1>Klantgegevens</h1>
+            <p>Beschrijving</p>
+            <a href="#">Ga naar Klantgegevens</a>
+        </div>
+        <div class="dashboard-content">
+            <h1>Voorraadbeheer</h1>
+            <p>Beschrijving</p>
+            <a href="#">Ga naar Voorraadbeheer</a>
+        </div>
+        <div class="dashboard-content">
+            <h1>Opbrengst</h1>
+            <p>Beschrijving</p>
+            <a href="#">Ga naar Opbrengst</a>
+        </div>
+        <div class="dashboard-content">
+            <h1>Medewerkers</h1>
+            <p>Beschrijving</p>
+            <a href="#">Ga naar Medewerkers</a>
+        </div>
+    </div>
+
+
     
 </body>
 </html>

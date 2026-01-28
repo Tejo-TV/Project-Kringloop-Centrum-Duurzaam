@@ -11,6 +11,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: white;
     color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ======================
@@ -47,6 +50,22 @@ header nav {
 /* Navigation Links */
 header nav a {
   text-decoration: none;
+  font-size: 17px;
+  color: white;
+  background-color: #18126b;
+  padding: 12px 10px;
+  border-radius: 20px;
+  transition: 0.2s ease-in-out;
+}
+
+/* Button Hover */
+header nav a:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Links (homepage) */
+.header-button {
+  text-decoration: none;
   font-size: 20px;
   color: white;
   background-color: #18126b;
@@ -56,8 +75,8 @@ header nav a {
   transition: 0.2s ease-in-out;
 }
 
-/* Button Hover */
-header nav a:hover {
+/* Button Hover (homepage) */
+.header-button:hover {
   background-color: #2d277c;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 5px 15px #0000004d;
@@ -177,7 +196,7 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: white;
 }
 
 /* Login Form */
@@ -297,3 +316,54 @@ header nav a:hover {
         margin-top: 25px;
     }
 }
+
+/* ======================
+  DASHBOARD STYLES
+====================== */
+
+    .dashboard {
+        padding: 30px 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .dashboard-content {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 25px 30px;
+        flex: 1 1 calc(50% - 10px);
+        box-shadow: 0 4px 8px #00000033;;
+    }
+    
+    .dashboard-content h1 {
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .dashboard-content p {
+        font-size: 0.9em;
+        font-weight: normal;
+        padding-bottom: 15px;
+    }
+
+    .dashboard-content a {
+        display: block;
+        background-color: #18126b;
+        color: white;
+        padding: 18px 15px;
+        border-radius: 30px;
+        text-decoration: none;
+        width: 70%;
+        box-sizing: border-box;
+        transition: 0.2s ease-in-out;
+    }
+
+    .dashboard-content a:hover {
+        background-color: #18126b;
+        color: white;
+        border-color: #18126b;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(24, 18, 107, 0.3);
+    }
