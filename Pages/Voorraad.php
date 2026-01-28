@@ -6,12 +6,11 @@
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 
-if (!isset($_SESSION["userid"])) {
-    header("Location: ../login.php?error=notLoggedIn");
-    exit();
-}
 
 require_once '../Config/DB_connect.php';
 require_once 'components/functions.inc.php';
@@ -28,31 +27,29 @@ $voorraad = haalAlleVoorraad($conn);
     <meta charset="UTF-8">
     <title>Voorraad</title>
     <link rel="stylesheet" href="../Assets/CSS/Style.css">
-    <style>
-        body { font-family: Arial; margin: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-        th { background: #f5f5f5; font-weight: bold; }
-    </style>
 </head>
 <body>
-    <h1>Voorraad Overzicht</h1>
+    <h1 class="Voorraad">Voorraad Overzicht</h1>
 
     <?php if ($voorraad): ?>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Omschrijving</th>
-                    <th>Hoeveelheid</th>
+                    <th>Artikel</th>
+                    <th>Locatie</th>
+                    <th>Aantal</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($voorraad as $item): ?>
                     <tr>
-                        <td><?= htmlspecialchars($item['ID']) ?></td>
-                        <td><?= $item['Omschrijving'] ?></td>
-                        <td><?= htmlspecialchars($item['Hoeveelheid']) ?></td>
+                        <td><?= htmlspecialchars($item['id']) ?></td>
+                        <td><?= htmlspecialchars($item['artikel_naam']) ?></td>
+                        <td><?= htmlspecialchars($item['locatie']) ?></td>
+                        <td><?= htmlspecialchars($item['aantal']) ?></td>
+                        <td><?= htmlspecialchars($item['status_naam']) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
