@@ -20,6 +20,8 @@ if(isset($_GET["error"])) {
         echo "<div class='popup2'> You have successfully logged out. </div>";
     } else if ($_GET["error"] == "none") {
         echo "<div class='popup2'> Account successfully created. Please log in now. </div>";
+    } else if ($_GET["error"] == "notLoggedIn") {
+        echo "<div class='popup1'> You must be logged in to access the dashboard. Please log in first. </div>";
     }
 }
 

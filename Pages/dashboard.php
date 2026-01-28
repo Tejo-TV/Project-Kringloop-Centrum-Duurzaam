@@ -7,8 +7,10 @@
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
 session_start();
-if (!isset($_SESSION["userid"])) {
-    header("Location: login.php?error=notLoggedIn");
+if (isset($_SESSION["userid"])) {
+    echo "<div class='popup2'> You are logged in. </div>";
+} else {
+    header("Location: ../login.php?error=notLoggedIn");
     exit();
 }
 ?>
