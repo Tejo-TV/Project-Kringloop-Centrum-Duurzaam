@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <!-- Header -->
+    <header>
+        <a href="index.php">Kringloop centrum</a>
+        <nav>
+            <a href="pages/login.php">Aanmelden</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="homepage">
+            <div class="homepage-content">
+                <h1>Kringloop Centrum Dashboard</h1>
+                <p>Het complete dashboard voor uw duurzame kringloop</p>
+                <a href="pages/login.php" class="btn-primary">Start Hier</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
