@@ -42,7 +42,9 @@ CREATE TABLE `artikel` (
 
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
-  `categorie` varchar(255) NOT NULL
+  `code` varchar(255) NOT NULL,
+  `omschrijving` varchar(255) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
