@@ -1,3 +1,12 @@
+<?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script       : index.php
+// Omschrijving      : Dit is de homepage van het Kringloop Centrum Duurzaam
+// Naam ontwikkelaar : Tejo Veldman
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
+//---------------------------------------------------------------------------------------------------// 
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -22,7 +31,7 @@
             <div class="homepage-content">
                 <h1>Kringloop Centrum Dashboard</h1>
                 <p>Het complete dashboard voor uw duurzame kringloop</p>
-                <a href="pages/login.php" class="btn-primary">Start Hier</a>
+                <a href="pages/login.php" class="btn-primary">Aanmelden</a>
             </div>
         </section>
     </main>

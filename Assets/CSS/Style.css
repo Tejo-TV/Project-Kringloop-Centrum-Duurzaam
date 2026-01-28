@@ -17,6 +17,7 @@ body {
   HEADER STYLES
 ====================== */
 
+/* Header border */
 header {
   display: flex;
   align-items: center;
@@ -28,6 +29,7 @@ header {
   z-index: 10;
 }
 
+/* Header Links */
 header a {
   display: flex;
   align-items: center;
@@ -42,7 +44,7 @@ header nav {
   gap: 15px;
 }
 
-/* Vierkante knoppen */
+/* Navigation Links */
 header nav a {
   text-decoration: none;
   font-size: 20px;
@@ -56,8 +58,13 @@ header nav a {
 
 /* Button Hover */
 header nav a:hover {
-  background-color: #2d277b;
+  background-color: #2d277c;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px #0000004d;
+  border-color: #ffffffcc;
 }
+
+
 
 /* ======================
   HOMEPAGE STYLES
@@ -95,9 +102,12 @@ header nav a:hover {
   border: 1px solid white;
   border-radius: 20px;
   transition: 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .homepage a:hover {
-    background-color: #2d277b;
-    color: rgb(214, 214, 214);
+  background-color: #2d277c;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px #0000004d;
+  border-color: #ffffffcc;
 }
