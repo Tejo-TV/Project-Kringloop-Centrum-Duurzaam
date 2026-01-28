@@ -1,4 +1,24 @@
 <?php 
+//---------------------------------------------------------------------------------------------------//
+// Naam script       : Voorraad.php
+// Omschrijving      : Dit is de voorraad beheer pagina
+// Naam ontwikkelaar : Kevin van Lit
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
+//---------------------------------------------------------------------------------------------------// 
+session_start();
+
+if (!isset($_SESSION["userid"])) {
+    header("Location: ../login.php?error=notLoggedIn");
+    exit();
+}
+
+require_once '../Config/DB_connect.php';
+require_once 'components/functions.inc.php';
+require_once 'components/adminnavbar.inc.php';
+
+$db = new Database();
+$conn = $db->getConnection();
 require_once 'components/adminnavbar.inc.php';
 ?>
 <!DOCTYPE html>
