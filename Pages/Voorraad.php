@@ -29,7 +29,7 @@ $voorraad = haalAlleVoorraad($conn);
     <link rel="stylesheet" href="../Assets/CSS/Style.css">
 </head>
 <body>
-    <h1>Voorraad Overzicht</h1>
+    <h1 class="Voorraad">Voorraad Overzicht</h1>
 
     <?php if ($voorraad): ?>
         <table>
