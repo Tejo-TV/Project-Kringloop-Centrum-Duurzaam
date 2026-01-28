@@ -41,21 +41,21 @@ if(isset($_GET["error"])) {
             // Toon menu opties op basis van gebruikersrol
             if ($_SESSION["role"] == 'admin') {
                 echo '  <a href="#">Instellingen</a>
-                        <a href="#">Ritten</a>
+                        <a href="ritten.php">Ritten</a>
                         <a href="#">Klantgegevens</a>
-                        <a href="#">Voorraadbeheer</a>
+                        <a href="Voorraad.php">Voorraadbeheer</a>
                         <a href="#">Opbrengst</a>
-                        <a href="#">Medewerkers</a>';
+                        <a href="make_user.php">Medewerkers</a>';
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <a href="#">Instellingen</a>
                         <a href="#">Opbrengst</a>
-                        <a href="#">Voorraadbeheer</a>';
+                        <a href="Voorraad.php">Voorraadbeheer</a>';
             } else if ($_SESSION["role"] == 'medewerker') {
                 echo '  <a href="#">Instellingen</a>
-                        <a href="#">Voorraadbeheer</a>';
+                        <a href="Voorraad.php">Voorraadbeheer</a>';
             } else if ($_SESSION["role"] == 'chauffeur') {
                 echo '  <a href="#">Instellingen</a>
-                        <a href="#">Ritten</a>';
+                        <a href="ritten.php">Ritten</a>';
             } else {
                 echo '<a href="#">Instellingen</a>';
             }
@@ -78,7 +78,7 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Ritten</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Ritten</a>
+                            <a href="ritten.php">Ga naar Ritten</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Klantgegevens</h1>
@@ -88,7 +88,7 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Voorraadbeheer</a>
+                            <a href="Voorraad.php">Ga naar Voorraadbeheer</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Opbrengst</h1>
@@ -98,7 +98,7 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Medewerkers</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Medewerkers</a>
+                            <a href="make_user.php">Ga naar Medewerkers</a>
                         </div>';
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <div class="dashboard-content">
@@ -114,7 +114,7 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Opbrengst</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Opbrengst</a>
+                            <a href="Voorraad.php">Ga naar Opbrengst</a>
                         </div>';
             } else if ($_SESSION["role"] == 'medewerker') {
                 echo '  <div class="dashboard-content">
@@ -125,7 +125,7 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Voorraadbeheer</a>
+                            <a href="Voorraad.php">Ga naar Voorraadbeheer</a>
                         </div>';
             } else if ($_SESSION["role"] == 'chauffeur') {
                 echo '  <div class="dashboard-content">
@@ -136,13 +136,13 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Ritten</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Ritten</a>
+                            <a href="ritten.php">Ga naar Ritten</a>
                         </div>';
             } else {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
                             <p>Beschrijving</p>
-                            <a href="#">Ga naar Instellingen</a>
+                            <a href="">Ga naar Instellingen</a>
                         </div>';
             }
             ?>
