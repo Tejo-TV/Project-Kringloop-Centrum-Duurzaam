@@ -13,8 +13,9 @@ if (!isset($_SESSION["userid"])) {
     exit();
 }
 
-require_once '../../Config/DB_connect.php';
+require_once '../Config/DB_connect.php';
 require_once 'components/functions.inc.php';
+require_once 'components/adminnavbar.inc.php';
 
 $db = new Database();
 $conn = $db->getConnection();
@@ -59,10 +60,3 @@ $voorraad = haalAlleVoorraad($conn);
     <?php else: ?>
         <p>Geen artikelen in voorraad.</p>
     <?php endif; ?>
-</body>
-</html>
-        <p>Geen artikelen in voorraad.</p>
-    <?php endif; ?>
-
-</body>
-</html>
