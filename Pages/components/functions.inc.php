@@ -56,7 +56,6 @@ function loginUser($conn, $gebruiker, $ww) {
     exit();
 }
 
-
 // ----------------------------------------------------
 // create category
 // ----------------------------------------------------
@@ -76,3 +75,20 @@ function loginUser($conn, $gebruiker, $ww) {
     header("Location: ../categorie.php?error=none");
     exit();
 }
+
+// ----------------------------------------------------
+// laad categorien
+// ----------------------------------------------------
+function loadCategorie($conn, $code, $omschrijving) {
+    $sql = "SELECT * FROM categorie WHERE code = :code";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":code", $gebruiker);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    
+}
+
+
+
