@@ -1,6 +1,6 @@
 <?php 
 
-if (isset($_POST["maak categorie"])) {
+if (isset($_POST["maak"])) {
 
     // alle items die zijn gepost worden in een apparte variable gezed
     $code = $_POST["code"];
@@ -13,6 +13,8 @@ if (isset($_POST["maak categorie"])) {
     // PDO connectie ophalen
     $db = new Database();
     $conn = $db->getConnection();
+    
+createCategorie ($conn, $code, $omschrijving);
+
     };
  
-createCategorie ($conn, $code, $omschrijving);

@@ -73,6 +73,6 @@ function loginUser($conn, $gebruiker, $ww) {
         ":omschrijving"     => $omschrijving
     ]);
  
-    header("Location: ../login.php?error=none");
+    header("Location: ../categorie.php?error=none");
     exit();
 }
