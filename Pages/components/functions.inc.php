@@ -55,3 +55,26 @@ function loginUser($conn, $gebruiker, $ww) {
     header("Location: ../dashboard.php?error=none");
     exit();
 }
+
+// ----------------------------------------------------
+// Create gebruiker
+// ----------------------------------------------------
+
+function createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
+ 
+    $sql = "INSERT INTO gebruiker (gebruikersnaam, wachtwoord, rollen, is_geverifieerd) VALUES (:gebruikersnaam, :wachtwoord, :rollen, :is_geverifieerd)";
+ 
+    $stmt = $conn->prepare($sql);
+ 
+    // Wachtwoord hashen
+    $wwHashed = hash('sha256', $wachtwoord);
+ 
+    $stmt->execute([
+        ':gebruikersnaam' => $gebruikersnaam,
+            ':wachtwoord' => $wwHashed,
+            ':rollen' => $rollen,
+            ':is_geverifieerd' => $is_geverifieerd
+    ]);
+        header("Location: ../dashboard.php?error=none");
+    exit();
+}
