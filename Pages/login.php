@@ -1,10 +1,10 @@
-<?php 
+<?php
 //---------------------------------------------------------------------------------------------------//
-// Naam script		    : login.php
-// Omschrijving		    : Op deze pagina kan je inloggen
-// Naam ontwikkelaar    : Tejo Veldman
-// Project		        : opdracht 007
-// Datum		        : 8 december 2025
+// Naam script       : login.php
+// Omschrijving      : Dit is de login pagina van het Kringloop Centrum Duurzaam
+// Naam ontwikkelaar : Tejo Veldman
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
 
 if(isset($_GET["error"])) {
@@ -20,6 +20,8 @@ if(isset($_GET["error"])) {
         echo "<div class='popup2'> You have successfully logged out. </div>";
     } else if ($_GET["error"] == "none") {
         echo "<div class='popup2'> Account successfully created. Please log in now. </div>";
+    } else if ($_GET["error"] == "notLoggedIn") {
+        echo "<div class='popup1'> You must be logged in to access the dashboard. Please log in first. </div>";
     }
 }
 
@@ -65,8 +67,9 @@ if(isset($_GET["error"])) {
                 <!-- Register Button -->
                 <div class="button-row">
                     <button type="submit" name="login" class="login-btn">Login</button>
-                    <button type="reset" class="reset-btn">Reset</button>
                 </div>
+
+                <p> Wachtwoord vergeten? <a href="reset.php">Reset wachtwoord</a></p>
             </form>
         </div>
     </div>
