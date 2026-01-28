@@ -55,3 +55,24 @@ function loginUser($conn, $gebruiker, $ww) {
     header("Location: ../dashboard.php?error=none");
     exit();
 }
+
+
+// ----------------------------------------------------
+// create category
+// ----------------------------------------------------
+   function createCategorie($conn, $code, $omschrijving) {
+ 
+    $sql = "INSERT INTO categorie
+            (code, omschrijving)
+            VALUES
+            (:code, :omschrijving)";
+ 
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+        ":code"             => $code,
+        ":omschrijving"     => $omschrijving
+    ]);
+ 
+    header("Location: ../login.php?error=none");
+    exit();
+}
