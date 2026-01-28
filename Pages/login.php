@@ -57,15 +57,15 @@ if(isset($_GET["error"])) {
 
         <form action="components/login.inc.php" method="POST">
 
-                <!-- gebruikersnaam -->
+                <!-- Gebruikersnaam -->
                 <div class="input-group">
                     <label>Gebruikersnaam:</label>
                     <input type="text" name="gebruiker" placeholder="Enter your gebruikersnaam" required />
                 </div>
 
-                <!-- Password -->
+                <!-- Wachtwoord -->
                 <div class="input-group">
-                    <label>Password:</label>
+                    <label>Wachtwoord:</label>
                     <input type="password" name="ww" placeholder="Enter your password" required />
                 </div>
 

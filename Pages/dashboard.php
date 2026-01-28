@@ -28,8 +28,8 @@ if(isset($_GET["error"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="shortcut icon" type="x-icon" href="../assets/Images/centrum-duurzaam-icon.png">
-    <link rel="stylesheet" href="../assets/CSS/Style.css" />
+    <link rel="shortcut icon" type="x-icon" href="../Assets/Images/centrum-duurzaam-icon.png">
+    <link rel="stylesheet" href="../Assets/CSS/Style.css" />
 </head>
 <body>
         <!-- Header -->
