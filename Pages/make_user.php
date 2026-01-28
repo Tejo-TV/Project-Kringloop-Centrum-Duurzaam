@@ -23,8 +23,23 @@ if (isset($_SESSION["userid"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../Assets/CSS/Style.css">
 </head>
 <body>
     
+    <!-- Header -->
+    <header>
+        <a href="index.php">Kringloop centrum</a>
+        <nav>
+            <a href="pages/login.php">Aanmelden</a>
+        </nav>
+    </header>
+
+    <div class="makeuser-container">
+        <div class="makeuser-form">
+            
+        </div>
+    </div>
+
 </body>
 </html>
