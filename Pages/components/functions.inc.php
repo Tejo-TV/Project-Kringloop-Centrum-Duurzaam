@@ -49,7 +49,7 @@ function loginUser($conn, $gebruiker, $ww) {
     }
 
     session_start();
-    $_SESSION["userid"] = $gebruikerExists["ID"];
+    $_SESSION["userid"] = $gebruikerExists["id"];
     $_SESSION["role"] = $gebruikerExists["rollen"];
 
     header("Location: ../dashboard.php?error=none");

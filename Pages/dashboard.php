@@ -1,16 +1,18 @@
 <?php
 //---------------------------------------------------------------------------------------------------//
-// Naam script       : login.php
-// Omschrijving      : Dit is de login pagina van het Kringloop Centrum Duurzaam
+// Naam script       : dashboard.php
+// Omschrijving      : Dit is de dashboard pagina van het Kringloop Centrum Duurzaam
 // Naam ontwikkelaar : Tejo Veldman
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
 session_start();
+
+// Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
 if (isset($_SESSION["userid"])) {
     echo "<div class='popup2'> You are logged in. </div>";
 } else {
-    header("Location: ../login.php?error=notLoggedIn");
+    header("Location: login.php?error=notLoggedIn");
     exit();
 }
 ?>
@@ -19,7 +21,8 @@ if (isset($_SESSION["userid"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../assets/CSS/Style.css" />
 </head>
 <body>
     
