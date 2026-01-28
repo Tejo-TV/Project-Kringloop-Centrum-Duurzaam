@@ -1,10 +1,10 @@
-<?php 
+<?php
 //---------------------------------------------------------------------------------------------------//
-// Naam script		    : login.php
-// Omschrijving		    : Op deze pagina kan je inloggen
-// Naam ontwikkelaar    : Tejo Veldman
-// Project		        : opdracht 007
-// Datum		        : 8 december 2025
+// Naam script       : login.php
+// Omschrijving      : Dit is de login pagina van het Kringloop Centrum Duurzaam
+// Naam ontwikkelaar : Tejo Veldman
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
 
 if(isset($_GET["error"])) {
