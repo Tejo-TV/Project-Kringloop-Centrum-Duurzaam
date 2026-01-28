@@ -21,7 +21,7 @@
     <header>
         <a href="index.php">Kringloop centrum</a>
         <nav>
-            <a href="pages/login.php">Aanmelden</a>
+            <a class="header-button" href="pages/login.php">Aanmelden</a>
         </nav>
     </header>
 

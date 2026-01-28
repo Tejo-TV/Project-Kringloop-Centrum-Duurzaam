@@ -19,10 +19,5 @@ Om de website te gebruiken, moet je eerst de database instellen. Volg deze stapp
    * Klik op **Bestand Kiezen** en selecteer `duurzaam.sql` uit de MySQL map.
    * Scroll omlaag en druk op **Importeren**.
 6. **Bevestiging** - Zodra het importeren klaar is, is de database gereed.
-7. **Account Aanmaken** - Gebruik het admin account om in te loggen en maak vervolgens je eigen account aan.
-
-   * Email: **test@gmail.com**
-   * Wachtwoord: **FAlpu7t8HHtfSJPNJvRF**
-8. **Test de Website** - Verwijder het oude admin account in phpMyAdmin en test de website door in te loggen.
 
 🎉 Gefeliciteerd! Je database is nu ingesteld en de website zou goed moeten functioneren.
