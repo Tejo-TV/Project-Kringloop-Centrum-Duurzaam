@@ -9,12 +9,18 @@
 session_start();
 
 // Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
-if (isset($_SESSION["userid"])) {
-    echo "<div class='popup2'> ✅ U bent succesvol ingelogd. </div>";
-} else {
+if (!isset($_SESSION["userid"])) {
     header("Location: login.php?error=notLoggedIn");
     exit();
 }
+
+//als je net bent ingelogd, laat een popup zien dat je succesvol bent ingelogd.
+if(isset($_GET["error"])) {
+    if ($_GET["error"] == "none") {
+        echo "<div class='popup2'> ✅ U bent succesvol ingelogd. </div>";
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +38,7 @@ if (isset($_SESSION["userid"])) {
         <nav>
             <a href="#">Dashboard</a>
             <?php 
+            // Toon menu opties op basis van gebruikersrol
             if ($_SESSION["role"] == 'admin') {
                 echo '  <a href="#">Instellingen</a>
                         <a href="#">Ritten</a>
@@ -61,6 +68,7 @@ if (isset($_SESSION["userid"])) {
     <!-- Body -->
     <div class="dashboard">
             <?php 
+            // Toon dashboard opties op basis van gebruikersrol
             if ($_SESSION["role"] == 'admin') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
