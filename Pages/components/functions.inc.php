@@ -1,4 +1,11 @@
 <?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script       : functions.inc.php
+// Omschrijving      : Functies voor het Kringloop Centrum Duurzaam
+// Naam ontwikkelaar : Tejo Veldman
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
+//---------------------------------------------------------------------------------------------------// '
 
 // ----------------------------------------------------
 // Check of login input leeg is
@@ -36,7 +43,8 @@ function loginUser($conn, $gebruiker, $ww) {
     $gebruikerExists = gebruikerExists($conn, $gebruiker);
 
     if ($gebruikerExists === false) {
-        header("Location: ../login.php?error=wrongLogin");
+        echo "<script>window.location.href = '../login.php?error=wrongLogin';</script>";
+        
         exit();
     }
 
@@ -44,14 +52,14 @@ function loginUser($conn, $gebruiker, $ww) {
     $wwHashed = hash('sha256', $ww);
 
     if ($db_ww !== $wwHashed) {
-        header("Location: ../login.php?error=wrongLogin");
+        echo "<script>window.location.href = '../login.php?error=wrongLogin';</script>";
         exit();
     }
 
     session_start();
-    $_SESSION["userid"] = $gebruikerExists["ID"];
+    $_SESSION["userid"] = $gebruikerExists["id"];
     $_SESSION["role"] = $gebruikerExists["rollen"];
 
-    header("Location: ../dashboard.php?error=none");
+    echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
 }
