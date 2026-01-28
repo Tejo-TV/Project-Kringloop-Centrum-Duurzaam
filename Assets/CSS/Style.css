@@ -200,10 +200,6 @@ header nav a:hover {
     font-weight: bold;
 }
 
-.login-form p {
-    text-align: center;
-}
-
 .input-group {
     margin-bottom: 25px;
     display: flex;

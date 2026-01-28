@@ -68,8 +68,6 @@ if(isset($_GET["error"])) {
                 <div class="button-row">
                     <button type="submit" name="login" class="login-btn">Login</button>
                 </div>
-
-                <p> Wachtwoord vergeten? <a href="reset.php">Reset wachtwoord</a></p>
             </form>
         </div>
     </div>
