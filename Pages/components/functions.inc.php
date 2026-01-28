@@ -133,3 +133,39 @@ function haalAlleStatuses($conn) {
 }
 
 ?>
+// ----------------------------------------------------
+// create category
+// ----------------------------------------------------
+   function createCategorie($conn, $code, $omschrijving) {
+ 
+    $sql = "INSERT INTO categorie
+            (code, omschrijving)
+            VALUES
+            (:code, :omschrijving)";
+ 
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+        ":code"             => $code,
+        ":omschrijving"     => $omschrijving
+    ]);
+ 
+    header("Location: ../categorie.php?error=none");
+    exit();
+}
+
+// ----------------------------------------------------
+// laad categorien
+// ----------------------------------------------------
+function loadCategorie($conn, $code, $omschrijving) {
+    $sql = "SELECT * FROM categorie WHERE code = :code";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":code", $gebruiker);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    
+}
+
+
+
