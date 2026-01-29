@@ -1,6 +1,6 @@
 <?php
 //---------------------------------------------------------------------------------------------------//
-// Naam script       : make_user.php
+// Naam script       : user_edit.php
 // Omschrijving      : Dit is de make user pagina van het Kringloop Centrum Duurzaam
 // Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
@@ -42,7 +42,7 @@ if (!isset($_SESSION["userid"])) {
     <div class="makeuser-container">
         <div class="makeuser-form">
             <h2>Gebruiker toevoegen</h2>
-            <form action="components/makeuser.inc.php" method="post">
+            <form action="components/user_edit.inc.php" method="post">
                 <label for="gebruikersnaam">Gebruikersnaam:</label><br>
                 <input type="text" id="gebruikersnaam" name="gebruikersnaam" maxlength="255" required><br><br>
 
@@ -62,6 +62,11 @@ if (!isset($_SESSION["userid"])) {
                 <button type="submit" name="makeuser">Toevoegen</button>
             </form>
         </div>
+    </div>
+
+    <!-- Gebruikerslijst en updateformulier -->
+    <div class="makeuser-list">
+        <?php include 'components/user_edit.inc.php'; ?>
     </div>
 
 </body>
