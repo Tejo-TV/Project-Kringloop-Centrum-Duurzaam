@@ -63,3 +63,16 @@ function loginUser($conn, $gebruiker, $ww) {
     echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
 }
+function Ritten($conn){
+    $sql = "SELECT planning.id, planning.artikel_id, planning.klant_id, planning.kenteken, planning.ophalen_of_bezorgen, planning.afspraak_op, 
+            artikel.naam as artikel_naam, klant.naam as klant_naam, klant.adres, klant.plaats
+            FROM planning
+            LEFT JOIN artikel ON planning.artikel_id = artikel.id
+            LEFT JOIN klant ON planning.klant_id = klant.id
+            ORDER BY planning.afspraak_op DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+

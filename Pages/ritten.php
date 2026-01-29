@@ -19,6 +19,7 @@ require_once 'components/adminnavbar.inc.php';
 
 $db = new Database();
 $conn = $db->getConnection();
+$ritten = Ritten($conn);
 require_once 'components/adminnavbar.inc.php';
 ?>
 <!DOCTYPE html>
@@ -29,6 +30,38 @@ require_once 'components/adminnavbar.inc.php';
     <title>Document</title>
 </head>
 <body>
+        <?php if ($ritten): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Artikel</th>
+                    <th>Klant</th>
+                    <th>Adres</th>
+                    <th>Plaats</th>
+                    <th>Kenteken</th>
+                    <th>Type</th>
+                    <th>Afspraak</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($ritten as $item): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($item['id']) ?></td>
+                        <td><?= htmlspecialchars($item['artikel_naam']) ?></td>
+                        <td><?= htmlspecialchars($item['klant_naam']) ?></td>
+                        <td><?= htmlspecialchars($item['adres']) ?></td>
+                        <td><?= htmlspecialchars($item['plaats']) ?></td>
+                        <td><?= htmlspecialchars($item['kenteken']) ?></td>
+                        <td><?= htmlspecialchars($item['ophalen_of_bezorgen']) ?></td>
+                        <td><?= htmlspecialchars($item['afspraak_op']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Geen ritten beschikbaar.</p>
+        <?php endif ?>
     
 </body>
 </html>
