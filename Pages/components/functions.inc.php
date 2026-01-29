@@ -188,7 +188,7 @@ function createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geve
             ':rollen' => $rollen,
             ':is_geverifieerd' => $is_geverifieerd
     ]);
-        header("Location: ../dashboard.php?error=none");
+        header("Location: ../user_edit.php?error=none");
     exit();
 }
 

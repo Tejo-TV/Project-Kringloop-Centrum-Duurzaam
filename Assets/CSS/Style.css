@@ -426,3 +426,174 @@ header nav a:hover {
     .voorraad{
         text-align: center;
     }
+
+/* ======================
+  USER_EDIT STYLES
+====================== */
+
+.makeuser-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 40px 0 100px 0;
+    min-height: 60vh;
+}
+
+.makeuser-form {
+    background: #fff;
+    border: 2px solid #18126b;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(24, 18, 107, 0.10);
+    padding: 40px 32px 32px 32px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+.makeuser-form h2 {
+    color: #18126b;
+    font-size: 28px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.makeuser-form label {
+    font-size: 16px;
+    color: #18126b;
+    font-weight: 600;
+}
+
+.makeuser-form input[type="text"],
+.makeuser-form input[type="password"],
+.makeuser-form select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-size: 15px;
+    transition: border-color 0.2s;
+}
+
+.makeuser-form input[type="text"]:focus,
+.makeuser-form input[type="password"]:focus,
+.makeuser-form select:focus {
+    border-color: #18126b;
+    outline: none;
+}
+
+.makeuser-form button[type="submit"] {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #18126b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.makeuser-form button[type="submit"]:hover {
+    background-color: #2d277c;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 12px #00000022;
+}
+
+.makeuser-list {
+    margin: 40px auto 60px auto;
+    max-width: 90%;
+    background: #fff;
+    border: 2px solid #18126b;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(24, 18, 107, 0.10);
+    padding: 32px 24px;
+}
+
+.makeuser-list h2 {
+    color: #18126b;
+    font-size: 24px;
+    margin-bottom: 18px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.makeuser-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.makeuser-list th, .makeuser-list td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.makeuser-list th {
+    background-color: #18126b;
+    color: #fff;
+    font-weight: 700;
+}
+
+.makeuser-list tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.makeuser-list input[type="text"],
+.makeuser-list input[type="password"],
+.makeuser-list input[type="number"] {
+    padding: 7px 10px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f9f9f9;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    width: 120px;
+}
+
+.makeuser-list input[type="text"]:focus,
+.makeuser-list input[type="password"]:focus,
+.makeuser-list input[type="number"]:focus {
+    border-color: #18126b;
+    outline: none;
+}
+
+.makeuser-list button[type="submit"] {
+    background-color: #18126b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.makeuser-list button[type="submit"]:hover {
+    background-color: #2d277c;
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 2px 8px #00000022;
+}
+
+@media (max-width: 1000px) {
+    .makeuser-list {
+        padding: 18px 4px;
+        max-width: 95%;
+    }
+    .makeuser-list table, .makeuser-list th, .makeuser-list td {
+        font-size: 13px;
+    }
+    .makeuser-form {
+        padding: 24px 10px;
+        max-width: 95vw;
+    }
+}
