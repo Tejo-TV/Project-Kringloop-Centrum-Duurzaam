@@ -1,6 +1,16 @@
+<?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script       : adminnavbar.inc.php
+// Omschrijving      : Dit is de admin navbar component
+// Naam ontwikkelaar : Kevin van Lit
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
+//---------------------------------------------------------------------------------------------------// 
+?>
 <link rel="stylesheet" href="../Assets/CSS/Style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <div class="admin-navbar">
+    
         <a class="admin-button" href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
         <a class="admin-button" href="make_user.php"><i class="fa-solid fa-bars"></i> Persoonsgegevens</a>
         <a class="admin-button" href="make_customer.php"><i class="fa-solid fa-bars"></i> Klantgegevens</a>
