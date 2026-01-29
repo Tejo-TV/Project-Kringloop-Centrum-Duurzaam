@@ -73,7 +73,7 @@ if(isset($_GET["error"])) {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
                             <p>Beheer de jou gegevens.</p>
-                            <a href="#">Ga naar Instellingen</a>
+                            <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Ritten</h1>
@@ -104,7 +104,7 @@ if(isset($_GET["error"])) {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
                             <p>Beheer de jou gegevens.</p>
-                            <a href="#">Ga naar Instellingen</a>
+                            <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
@@ -120,7 +120,7 @@ if(isset($_GET["error"])) {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
                             <p>Beheer de jou gegevens.</p>
-                            <a href="#">Ga naar Instellingen</a>
+                            <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
@@ -131,7 +131,7 @@ if(isset($_GET["error"])) {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
                             <p>Beheer de jou gegevens.</p>
-                            <a href="#">Ga naar Instellingen</a>
+                            <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Ritten</h1>
@@ -142,7 +142,7 @@ if(isset($_GET["error"])) {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
                             <p>Beheer de jou gegevens.</p>
-                            <a href="">Ga naar Instellingen</a>
+                            <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>';
             }
             ?>

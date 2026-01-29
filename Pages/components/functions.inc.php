@@ -7,8 +7,9 @@
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// '
 
+// ----------------------------------------------------
 // Check of login input leeg is
-
+// ----------------------------------------------------
 function emptyInputLogin($gebruiker, $ww) {
     if (empty($gebruiker) || empty($ww)) {
         return true;
@@ -16,8 +17,9 @@ function emptyInputLogin($gebruiker, $ww) {
     return false;
 }
 
+// ----------------------------------------------------
 // Check of gebruiker al bestaat
-
+// ----------------------------------------------------
 function gebruikerExists($conn, $gebruiker) {
     $sql = "SELECT * FROM gebruiker WHERE gebruikersnaam = :gebruiker";
     $stmt = $conn->prepare($sql);
@@ -32,8 +34,9 @@ function gebruikerExists($conn, $gebruiker) {
     return false;
 }
 
+// ----------------------------------------------------
 // Inloggen
-
+// ----------------------------------------------------
 function loginUser($conn, $gebruiker, $ww) {
 
     $gebruikerExists = gebruikerExists($conn, $gebruiker);
@@ -55,17 +58,47 @@ function loginUser($conn, $gebruiker, $ww) {
     session_start();
     $_SESSION["userid"] = $gebruikerExists["id"];
     $_SESSION["role"] = $gebruikerExists["rollen"];
+    $_SESSION['username'] = $gebruikerExists['gebruikersnaam'];
 
     echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
 }
 
+// ----------------------------------------------------
+// Update gebruiker instellingen
+// ----------------------------------------------------
+function updateUser($conn, $id, $gebruiker, $ww) {
+    if (isset($ww)) {
+        $wwHashed = hash('sha256', $ww);
+        $stmt = $conn->prepare("UPDATE gebruiker SET gebruikersnaam = :gebruiker, wachtwoord = :ww WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":gebruiker", $gebruiker);
+        $stmt->bindParam(":ww", $wwHashed);
+        $stmt->execute();
+
+        echo "<script>window.location.href = '../instellingen.php?error=none';</script>";
+        exit();
+    } else {
+        $stmt = $conn->prepare("UPDATE gebruiker SET gebruikersnaam = :gebruiker WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":gebruiker", $gebruiker);
+        $stmt->execute();
+
+        echo "<script>window.location.href = '../instellingen.php?error=none';</script>";
+        exit();
+    }
+}
+
+// ----------------------------------------------------
 // Voorraad validatie
+// ----------------------------------------------------
 function emptyInputVoorraadToevoegen($artikel_id, $locatie, $aantal, $status_id) {
     return empty($artikel_id) || empty($locatie) || empty($aantal) || empty($status_id);
 }
 
+// ----------------------------------------------------
 // Voeg voorraad toe
+// ----------------------------------------------------
 function voegVoorraadToe($conn, $artikel_id, $locatie, $aantal, $status_id) {
     $stmt = $conn->prepare(
         "INSERT INTO voorraad (artikel_id, locatie, aantal, status_id, ingeboekt_op) 
@@ -78,7 +111,9 @@ function voegVoorraadToe($conn, $artikel_id, $locatie, $aantal, $status_id) {
     return $stmt->execute();
 }
 
+// ----------------------------------------------------
 // Haal voorraad op
+// ----------------------------------------------------
 function haalAlleVoorraad($conn) {
     $stmt = $conn->prepare(
         "SELECT v.id, v.artikel_id, v.locatie, v.aantal, v.status_id, v.ingeboekt_op,
@@ -92,14 +127,18 @@ function haalAlleVoorraad($conn) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// ----------------------------------------------------
 // Verwijder voorraad
+// ----------------------------------------------------
 function verwijderVoorraad($conn, $voorraadID) {
     $stmt = $conn->prepare("DELETE FROM voorraad WHERE id = :id");
     $stmt->bindParam(":id", $voorraadID);
     return $stmt->execute();
 }
 
+// ----------------------------------------------------
 // Update voorraad
+// ----------------------------------------------------
 function updateVoorraad($conn, $voorraadID, $artikel_id, $locatie, $aantal, $status_id) {
     $stmt = $conn->prepare(
         "UPDATE voorraad SET artikel_id = :artikel_id, locatie = :locatie, 
@@ -113,7 +152,9 @@ function updateVoorraad($conn, $voorraadID, $artikel_id, $locatie, $aantal, $sta
     return $stmt->execute();
 }
 
+// ----------------------------------------------------
 // Haal artikelen op
+// ----------------------------------------------------
 function haalAlleArtikelen($conn) {
     $stmt = $conn->prepare(
         "SELECT a.id, a.naam, a.prijs_ex_btw, c.categorie 
@@ -125,7 +166,9 @@ function haalAlleArtikelen($conn) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// ----------------------------------------------------
 // Haal statuses op
+// ----------------------------------------------------
 function haalAlleStatuses($conn) {
     $stmt = $conn->prepare("SELECT id, status FROM status ORDER BY status ASC");
     $stmt->execute();
@@ -134,7 +177,7 @@ function haalAlleStatuses($conn) {
 
 
 // ----------------------------------------------------
-// create category
+// Create category
 // ----------------------------------------------------
    function createCategorie($conn, $code, $omschrijving) {
  
@@ -149,12 +192,12 @@ function haalAlleStatuses($conn) {
         ":omschrijving"     => $omschrijving
     ]);
  
-    header("Location: ../categorie.php?error=none");
+    echo "<script>window.location.href = '../categorie.php?error=none';</script>";
     exit();
 }
 
 // ----------------------------------------------------
-// laad categorien
+// Laad categorien
 // ----------------------------------------------------
 function loadCategorie($conn, $code, $omschrijving) {
     $sql = "SELECT * FROM categorie WHERE code = :code";
@@ -188,7 +231,7 @@ function createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geve
             ':rollen' => $rollen,
             ':is_geverifieerd' => $is_geverifieerd
     ]);
-        header("Location: ../dashboard.php?error=none");
+    echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
 }
 
