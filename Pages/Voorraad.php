@@ -7,12 +7,22 @@
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
 
+// Start sessie
+session_start();
+
+// Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
+if (!isset($_SESSION["userid"])) {
+    echo "<script>window.location.href = 'login.php?error=notLoggedIn';</script>";
+    exit();
+} elseif ($_SESSION["role"] != 'admin' && $_SESSION["role"] != 'directie' && $_SESSION["role"] != 'medewerker') {
+    // Niet gemachtigd
+    echo "<script>window.location.href = 'dashboard.php?error=notAuthorized';</script>";
+    exit();
+}
+
 // Fouten tonen (development)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// Start sessie
-session_start();
 
 
 // Include DB + components

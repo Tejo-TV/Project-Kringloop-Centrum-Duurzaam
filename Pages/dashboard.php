@@ -10,7 +10,7 @@ session_start();
 
 // Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
 if (!isset($_SESSION["userid"])) {
-    header("Location: login.php?error=notLoggedIn");
+    echo "<script>window.location.href = 'login.php?error=notLoggedIn';</script>";
     exit();
 }
 
@@ -18,6 +18,8 @@ if (!isset($_SESSION["userid"])) {
 if(isset($_GET["error"])) {
     if ($_GET["error"] == "none") {
         echo "<div class='popup2'> ✅ U bent succesvol ingelogd. </div>";
+    } elseif ($_GET["error"] == "notAuthorized") {
+        echo "<div class='popup1'> ❌ U bent niet gemachtigd om deze pagina te bekijken. </div>";
     }
 }
 

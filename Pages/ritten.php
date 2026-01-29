@@ -8,8 +8,13 @@
 //---------------------------------------------------------------------------------------------------// 
 session_start();
 
+// Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
 if (!isset($_SESSION["userid"])) {
-    header("Location: ../login.php?error=notLoggedIn");
+    echo "<script>window.location.href = 'login.php?error=notLoggedIn';</script>";
+    exit();
+} elseif ($_SESSION["role"] != 'admin' && $_SESSION["role"] != 'chauffeur') {
+    // Niet gemachtigd
+    echo "<script>window.location.href = 'dashboard.php?error=notAuthorized';</script>";
     exit();
 }
 

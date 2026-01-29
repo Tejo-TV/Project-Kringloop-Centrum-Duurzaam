@@ -9,6 +9,10 @@
 session_start();
 
 // Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
+if (!isset($_SESSION["userid"])) {
+    echo "<script>window.location.href = 'login.php?error=notLoggedIn';</script>";
+    exit();
+}
 
 
 
