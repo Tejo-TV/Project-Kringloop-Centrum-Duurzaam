@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
     $artikel_naam = trim($_POST['artikel_naam'] ?? '');
     $locatie = trim($_POST['locatie'] ?? '');
     $aantal = (int)($_POST['aantal'] ?? 0); 
-    $aantal = (int)($_POST['aantal'] ?? 0); // forceer integer
+    $aantal = (int)($_POST['aantal'] ?? 0); 
     $status = trim($_POST['status'] ?? '');
 
     // Valideer invoer
@@ -42,13 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
             $artikel = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if (!$artikel) {
-                // Voeg artikel toe (defaults)
+                // Voeg artikel toe
                 $stmt = $conn->prepare("INSERT INTO artikel (naam, categorie_id, prijs_ex_btw) VALUES (:naam, 1, 0)");
                 $stmt->bindParam(":naam", $artikel_naam);
                 $stmt->execute();
                 $artikel_id = (int)$conn->lastInsertId();
 
-                // Fallback: zoek opnieuw op naam als id niet komt
+                // zoek opnieuw op naam als id niet komt
                 if ($artikel_id <= 0) {
                     $stmt = $conn->prepare("SELECT id FROM artikel WHERE naam = :naam");
                     $stmt->bindParam(":naam", $artikel_naam);
@@ -61,12 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
                 $artikel_id = (int)$artikel['id'];
             }
 
-            // Fout: geen artikel id
+            // als geen artikel id
             if ($artikel_id <= 0) {
                 throw new Exception('Kon artikel niet aanmaken of vinden. Controleer of de tabel `artikel` een geldig AUTO_INCREMENT primaire sleutel heeft.');
             }
 
-            // Haal status id (fallback 1)
+            // Haal status id 
             $stmt = $conn->prepare("SELECT id FROM status WHERE status = :status");
             $stmt->bindParam(":status", $status);
             $stmt->execute();
