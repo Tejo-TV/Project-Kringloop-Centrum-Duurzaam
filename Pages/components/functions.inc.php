@@ -170,11 +170,9 @@ function haalAlleCategorien($conn) {
 // Verwijder categorie
 function verwijdercategorie($conn, $categorieID) {
 
-
-//    $stmt = $conn->prepare("DELETE FROM categorie WHERE id = :id");
-  //  $stmt->bindParam(":id", $categorieID);
-//    return $stmt->execute();
-return   $categorieID;
+   $stmt = $conn->prepare("DELETE FROM categorie WHERE id = :id");
+   $stmt->bindParam(":id", $categorieID);
+   return $stmt->execute();
 }
 
 

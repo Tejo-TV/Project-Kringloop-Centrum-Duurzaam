@@ -14,7 +14,7 @@ session_start();
 
 require_once '../Config/DB_connect.php';
 require_once 'components/functions.inc.php';
-// require_once 'components/adminnavbar.inc.php';
+require_once 'components/adminnavbar.inc.php';
 
 $db = new Database();
 $conn = $db->getConnection();
@@ -87,12 +87,12 @@ $categorien = haalAlleCategorien($conn);
             </thead>
             <tbody>
                 <?php foreach ($categorien as $item): 
-                    if (array_key_exists('delete', $_POST)) { $categorieID = $item['id']; verwijdercategorie($conn, $categorieID);    }   
+                    // if (array_key_exists('delete', $_POST)) {  verwijdercategorie($conn, $categorieID);    }   
                 ?>
                     <tr>
                          <!-- Checkbox per rij -->
                         <td><input type="checkbox" class="item-checkbox"></td> 
-                        <td><?= htmlspecialchars($item['id']) ?></td>
+                        <td><?= htmlspecialchars($item['id'])?></td>
                         <td><?= htmlspecialchars($item['code']) ?></td>
                         <td><?= htmlspecialchars($item['omschrijving']) ?></td>
                         <form method="post">
