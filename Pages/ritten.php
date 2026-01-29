@@ -25,7 +25,7 @@ require_once 'components/adminnavbar.inc.php';
 $db = new Database();
 $conn = $db->getConnection();
 
-// Handle POST requests
+// haal opgegeven ritten functies
 $message = '';
 $messageType = '';
 
@@ -106,6 +106,7 @@ if (isset($_GET['edit'])) {
     <link rel="stylesheet" href="../Assets/CSS/Style.css">
 </head>
 <body>
+    <?php require_once 'components/adminnavbar.inc.php'; ?>
     <div class="ritten-container">
         <h1>Ritten Planning</h1>
         

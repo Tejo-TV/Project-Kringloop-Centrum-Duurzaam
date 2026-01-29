@@ -398,6 +398,18 @@ header nav a:hover {
     padding-bottom: 10px;
 }
 
+
+@media (max-width: 800px) {
+    .admin-navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .ritten-container {
+        margin-left: 0;
+    }
+}
+
 .dashboard-content p {
     font-size: 0.9em;
     font-weight: normal;
@@ -439,6 +451,9 @@ header nav a:hover {
 ====================== */
 /* Zorg dat alle voorraad elementen rechts van de zijbalk beginnen */
 .ritten-table-container,
+.ritten-container,
+.ritten-form-container,
+.ritten-table,
 .voorraad-header,
 .voorraad-table,
 .formulier-container,
@@ -685,10 +700,14 @@ header nav a:hover {
    ====================== */
 
 .ritten-container {
-    margin-left: var(--content-offset);
-    max-width: var(--content-max-width);
-    width: calc(100% - var(--content-offset) - var(--content-right-gap));
-    padding: 20px 40px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 90%;
+    padding-left: 200px;
 }
 
 .ritten-container h1 {
