@@ -61,7 +61,7 @@ function loginGebruiker($conn, $gebruiker, $ww) {
     
     // Zet rol, als magazijnmedewerker of winkeledewerker dan 'medewerker'
     $role = $gebruikerExists["rollen"];
-    $_SESSION["role"] = ($role == "magazijnmedewerker" || $role == "winkeledewerker") ? "medewerker" : $role;
+    $_SESSION["role"] = ($role == "magazijnmedewerker" || $role == "winkelmedewerker") ? "medewerker" : $role;
     
 
 

@@ -72,13 +72,13 @@ if (!isset($_SESSION["userid"])) {
                 <input type="text" id="gebruikersnaam" name="gebruikersnaam" maxlength="255" required><br><br>
 
                 <label for="wachtwoord">Wachtwoord:</label><br>
-                <input type="password" id="wachtwoord" name="wachtwoord" maxlength="255" required><br><br>
+                <input type="password" id="wachtwoord" name="wachtwoord" minlength="8" maxlength="255" required><br><br>
 
                 <label for="rollen">Rol:</label><br>
                 <select id="rollen" name="rollen" required>
-                    <option value="Directielid">Directielid</option>
-                    <option value="magazijnmedewerker">Magazijnmedewerker</option>
-                    <option value="winkelmedewerker">Winkelmedewerker</option>
+                    <option value="directie">Directielid</option>
+                    <option value="magazijnmedewerker">magazijnmedewerker</option>
+                    <option value="winkelmedewerker">winkelmedewerker</option>
                     <option value="chauffeur">Chauffeur</option>
                 </select><br><br>
 
