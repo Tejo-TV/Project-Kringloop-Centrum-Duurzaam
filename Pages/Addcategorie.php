@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : Addcategorie.php
 // Omschrijving      : Dit is de categorie toevoegings pagina van het Kringloop Centrum Duurzaam
-// Naam ontwikkelaar : Kieran Teunissen
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 

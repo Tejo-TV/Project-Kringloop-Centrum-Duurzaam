@@ -3,7 +3,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : logout.inc.php
 // Omschrijving      : Op deze pagina wordt de user uitgelogd
-// Naam ontwikkelaar : Tejo Veldman
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 

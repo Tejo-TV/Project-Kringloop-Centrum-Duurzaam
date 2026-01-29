@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : functions.inc.php
 // Omschrijving      : Functies voor het Kringloop Centrum Duurzaam
-// Naam ontwikkelaar : Tejo Veldman
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// '

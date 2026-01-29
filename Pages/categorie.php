@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : Voorraad.php
 // Omschrijving      : Dit is de voorraad beheer pagina
-// Naam ontwikkelaar : Thimo Kamp
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 

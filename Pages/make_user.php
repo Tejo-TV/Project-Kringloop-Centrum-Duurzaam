@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : make_user.php
 // Omschrijving      : Dit is de make user pagina van het Kringloop Centrum Duurzaam
-// Naam ontwikkelaar : Suzanne Boon
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 

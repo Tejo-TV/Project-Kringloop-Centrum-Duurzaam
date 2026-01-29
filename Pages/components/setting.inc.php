@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : setting.inc.php
 // Omschrijving      : Op deze pagina worden de instellingen van de gebruiker bijgewerkt
-// Naam ontwikkelaar : Tejo Veldman
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 

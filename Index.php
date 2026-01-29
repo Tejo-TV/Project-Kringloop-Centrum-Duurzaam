@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : index.php
 // Omschrijving      : Dit is de homepage van het Kringloop Centrum Duurzaam
-// Naam ontwikkelaar : Tejo Veldman
+// Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
