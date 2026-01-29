@@ -437,7 +437,19 @@ header nav a:hover {
 /* ======================
   VOORRAAD STYLES
 ====================== */
-
+/* Zorg dat alle voorraad elementen rechts van de zijbalk beginnen */
+.ritten-table-container,
+.voorraad-header,
+.voorraad-table,
+.formulier-container,
+.table-footer,
+.error-msg {
+    margin-left: var(--content-offset);
+    max-width: var(--content-max-width);
+    width: calc(100% - var(--content-offset) - var(--content-right-gap));
+    padding-right: 10px;
+    background-color: transparent;
+}
 :root {
     margin-left: var(--content-offset);
     max-width: var(--content-max-width);
