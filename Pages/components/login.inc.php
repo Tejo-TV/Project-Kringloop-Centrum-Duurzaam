@@ -22,12 +22,12 @@ if (isset($_POST["login"])) {
     $conn = $db->getConnection();
 
     // Check of er lege velden zijn
-    if (emptyInputLogin($gebruiker, $ww) !== false) {
+    if (leegInvoerLogin($gebruiker, $ww) !== false) {
         echo "<script>window.location.href = '../login.php?error=emptyinput';</script>";
         exit();
     }
     // logt de gebruiker in
-    loginUser($conn, $gebruiker, $ww);
+    loginGebruiker($conn, $gebruiker, $ww);
 } else {
     // als iemand probeert deze pagina te benaderen zonder op de inloggen knop te drukken wordt die terug gestuurd naar de login pagina./
     echo "<script>window.location.href = '../login.php?error=wrongWay';</script>";

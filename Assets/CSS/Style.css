@@ -426,3 +426,282 @@ header nav a:hover {
     .voorraad{
         text-align: center;
     }
+
+
+
+    .Voorraadpar{
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+/* ======================
+  VOORRAAD STYLES
+====================== */
+
+
+:root {
+    --admin-width: 200px; /* keep in sync with .admin-navbar */
+    --content-offset: calc(var(--admin-width) + 60px); /* left gap from navbar */
+    --content-max-width: 1200px;
+    --content-right-gap: 40px;
+}
+
+/* Zorg dat alle voorraad elementen rechts van de zijbalk beginnen */
+.voorraad-header,
+.voorraad-table,
+.formulier-container,
+.table-footer,
+.error-msg {
+    margin-left: var(--content-offset);
+    max-width: var(--content-max-width);
+    width: calc(100% - var(--content-offset) - var(--content-right-gap));
+    padding-right: 10px;
+    background-color: transparent;
+}
+
+
+
+.voorraad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 28px 20px;
+    background-color: white;
+    box-shadow: none;
+
+    padding: 20px 40px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.voorraad-header h1 {
+    margin: 0;
+
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Nieuwe item knop subtiel lila, zoals mock */
+.toggle-btn {
+    padding: 8px 14px;
+    background-color: #d3c6ee;
+    color: #2d1f5a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+.toggle-btn:hover {
+    background-color: #c3b6e8;
+}
+
+/* Tabel: wijd, veel witruimte en subtiele scheidingslijnen */
+.voorraad-table {
+    margin-top: 8px;
+    width: calc(100% - 0px);
+    border-collapse: separate;
+    border-spacing: 0 18px; /* verticale afstand tussen rijen */
+
+}
+
+.voorraad-table {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    border-collapse: collapse;
+
+}
+
+.voorraad-table thead th {
+    text-align: left;
+
+    padding: 10px 16px;
+    border-bottom: none;
+    font-weight: 700;
+    color: #777;
+}
+
+.voorraad-table tbody td {
+    background: white;
+    padding: 22px 18px;
+    vertical-align: middle;
+    border-bottom: 3px solid #bdbdbd; /* duidelijke lijn tussen items */
+}
+
+/* Checkbox kolom smaller */
+.voorraad-table tbody td:first-child { width: 48px; }
+.voorraad-table tbody td:nth-child(2) { width: 60px; }
+
+.actions {
+    text-align: right;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #111;
+    padding: 8px 12px;
+}
+
+.menu-btn:hover { color: #333; }
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0 40px 0;
+    margin-top: 10px;
+    color: #666;
+}
+
+.pagination { display: flex; gap: 10px; align-items: center; }
+.paginatie-btn { background: none; border: none; cursor: pointer; color: #666; padding: 5px 10px; }
+.paginatie-btn:hover { color: #333; }
+
+.pagination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.paginatie-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.paginatie-btn:hover {
+    color: #333;
+}
+
+
+/* ======================
+  FORMULIER STYLES
+====================== */
+
+.formulier-container {
+    display: none;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    width: 90%;
+    margin-left: 250px;
+}
+
+.formulier-container.active {
+    display: block;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    background-color: #7c5cc1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+    background-color: #6b4aaa;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #da190b;
+}
+
+.error-msg {
+    max-width: 1200px;
+    margin: 10px auto;
+    width: 90%;
+    padding: 12px 16px;
+    background: #ffe6e6;
+    border: 1px solid #ffb3b3;
+    color: #a60000;
+    border-radius: 4px;
+}
+
+.Voorraadpar{
+   text-align: center;
+
+
+}
+
+
+
