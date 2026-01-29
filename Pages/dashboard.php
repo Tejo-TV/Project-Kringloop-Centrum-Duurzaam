@@ -46,7 +46,6 @@ if(isset($_GET["error"])) {
                         <a href="ritten.php">Ritten</a>
                         <a href="#">Klantgegevens</a>
                         <a href="Voorraad.php">Voorraadbeheer</a>
-                        <a href="categorie.php">Categoriebeheer</a>
                         <a href="#">Opbrengst</a>
                         <a href="make_user.php">Medewerkers</a>';
             } else if ($_SESSION["role"] == 'directie') {

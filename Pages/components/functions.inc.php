@@ -199,10 +199,9 @@ function haalAlleStatuses($conn) {
 // ----------------------------------------------------
 // Laad categorien
 // ----------------------------------------------------
-function loadCategorie($conn, $code, $omschrijving) {
-    $sql = "SELECT * FROM categorie WHERE code = :code";
+function haalAlleCategorien($conn) {
+    $sql = "SELECT * FROM categorie";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":code", $gebruiker);
     $stmt->execute();
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
