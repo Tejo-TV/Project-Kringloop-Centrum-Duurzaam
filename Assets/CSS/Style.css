@@ -426,10 +426,9 @@ header nav a:hover {
     .voorraad{
         text-align: center;
     }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
+
+
     .Voorraadpar{
         margin-top: 20px;
         font-size: 18px;
@@ -439,7 +438,7 @@ header nav a:hover {
   VOORRAAD STYLES
 ====================== */
 
-<<<<<<< Updated upstream
+
 :root {
     --admin-width: 200px; /* keep in sync with .admin-navbar */
     --content-offset: calc(var(--admin-width) + 60px); /* left gap from navbar */
@@ -460,27 +459,27 @@ header nav a:hover {
     background-color: transparent;
 }
 
-=======
->>>>>>> Stashed changes
+
+
 .voorraad-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< Updated upstream
+
     padding: 28px 20px;
     background-color: white;
     box-shadow: none;
-=======
+
     padding: 20px 40px;
     background-color: white;
     max-width: 1200px;
     margin: 0 auto;
->>>>>>> Stashed changes
+
 }
 
 .voorraad-header h1 {
     margin: 0;
-<<<<<<< Updated upstream
+
     font-size: 28px;
     color: #333;
     font-weight: 600;
@@ -509,7 +508,7 @@ header nav a:hover {
     width: calc(100% - 0px);
     border-collapse: separate;
     border-spacing: 0 18px; /* verticale afstand tussen rijen */
-=======
+
 }
 
 .voorraad-table {
@@ -517,12 +516,12 @@ header nav a:hover {
     margin: 0 auto;
     width: 90%;
     border-collapse: collapse;
->>>>>>> Stashed changes
+
 }
 
 .voorraad-table thead th {
     text-align: left;
-<<<<<<< Updated upstream
+
     padding: 10px 16px;
     border-bottom: none;
     font-weight: 700;
@@ -539,61 +538,26 @@ header nav a:hover {
 /* Checkbox kolom smaller */
 .voorraad-table tbody td:first-child { width: 48px; }
 .voorraad-table tbody td:nth-child(2) { width: 60px; }
-=======
-    padding: 15px;
-    border-bottom: 2px solid #ddd;
-    font-weight: 600;
-    color: #333;
-}
-
-.voorraad-table tbody td {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    vertical-align: middle;
-}
-
-.voorraad-table tbody tr:hover {
-    background-color: #f9f9f9;
-}
-
-.voorraad-table input[type="checkbox"] {
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-}
 
 .actions {
     text-align: right;
 }
->>>>>>> Stashed changes
 
 .menu-btn {
     background: none;
     border: none;
     font-size: 20px;
     cursor: pointer;
-<<<<<<< Updated upstream
     color: #111;
     padding: 8px 12px;
 }
 
-.menu-btn:hover { color: #111; }
-=======
-    color: #666;
-    padding: 5px 10px;
-    transition: color 0.2s;
-}
-
-.menu-btn:hover {
-    color: #333;
-}
->>>>>>> Stashed changes
+.menu-btn:hover { color: #333; }
 
 .table-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< Updated upstream
     padding: 6px 0 40px 0;
     margin-top: 10px;
     color: #666;
@@ -602,14 +566,6 @@ header nav a:hover {
 .pagination { display: flex; gap: 10px; align-items: center; }
 .paginatie-btn { background: none; border: none; cursor: pointer; color: #666; padding: 5px 10px; }
 .paginatie-btn:hover { color: #333; }
-
-=======
-    padding: 15px 0;
-    margin: 20px auto;
-    max-width: 1200px;
-    width: 90%;
-    color: #666;
-}
 
 .pagination {
     display: flex;
@@ -629,7 +585,7 @@ header nav a:hover {
 .paginatie-btn:hover {
     color: #333;
 }
->>>>>>> Stashed changes
+
 
 /* ======================
   FORMULIER STYLES
@@ -743,9 +699,9 @@ header nav a:hover {
 
 .Voorraadpar{
    text-align: center;
-<<<<<<< Updated upstream
+
 
 }
-=======
-}
->>>>>>> Stashed changes
+
+
+

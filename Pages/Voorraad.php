@@ -1,4 +1,6 @@
 <?php
+
+
 // Fouten tonen (development)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -6,7 +8,10 @@ ini_set('display_errors', 1);
 // Start sessie
 session_start();
 
+
 // Include DB + components
+
+
 require_once '../Config/DB_connect.php';
 require_once 'components/functions.inc.php';
 require_once 'components/adminnavbar.inc.php';
@@ -24,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
     $artikel_naam = trim($_POST['artikel_naam'] ?? '');
     $locatie = trim($_POST['locatie'] ?? '');
     $aantal = (int)($_POST['aantal'] ?? 0); 
+    $aantal = (int)($_POST['aantal'] ?? 0); // forceer integer
     $status = trim($_POST['status'] ?? '');
 
     // Valideer invoer
@@ -67,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
             $status_obj = $stmt->fetch(PDO::FETCH_ASSOC);
             $status_id = $status_obj ? (int)$status_obj['id'] : 1; // 1 is default/status fallback
 
-            // Voeg voorraad toe
+            // Voeg voorraad toe (helper)
             if (voegVoorraadToe($conn, $artikel_id, $locatie, $aantal, $status_id)) {
                 // Redirect na succes 
                 header("Location: Voorraad.php?success=1");
@@ -184,7 +190,7 @@ $voorraad = haalAlleVoorraad($conn);
             </tbody>
         </table>
 
-        <!-- Footer-->
+        <!-- Footer/paginatie -->
         <div class="table-footer">
             <span><?php echo count($voorraad); ?> Resultaten</span>
             <div class="pagination">
