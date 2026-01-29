@@ -242,8 +242,10 @@ function haalAlleStatuses($conn) {
 // Laad categorien
 // ----------------------------------------------------
 function haalAlleCategorien($conn) {
-    $sql = "SELECT * FROM categorie";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare(
+        "SELECT id, code, omschrijving 
+         FROM categorie"
+    );
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
