@@ -217,6 +217,7 @@ function haalAlleStatuses($conn) {
 function haalAlleCategorien($conn) {
     $sql = "SELECT * FROM categorie";
     $stmt = $conn->prepare($sql);
+}
 // Create Rit
 function createRit($conn, $artikel_id, $klant_id, $kenteken, $ophalen_of_bezorgen, $afspraak_op) {
     $stmt = $conn->prepare(
@@ -298,5 +299,4 @@ function maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geveri
     echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
 }
-
 ?>
