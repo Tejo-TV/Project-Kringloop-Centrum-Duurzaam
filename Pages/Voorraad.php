@@ -111,7 +111,7 @@ $voorraad = haalAlleVoorraad($conn);
     <!-- Header -->
     <div class="voorraad-header">
         <h1 class="Voorraad">Voorraad</h1>
-        <button class="toggle-btn" onclick="toggleFormulier()">Nieuwe Item</button>
+        <button class="toggle-btn" onclick="toggleFormulier()">Nieuw Item</button>
     </div>
 
     <!-- Foutmelding -->
