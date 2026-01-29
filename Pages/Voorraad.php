@@ -1,12 +1,4 @@
 <?php
-//---------------------------------------------------------------------------------------------------//
-// Naam script       : Voorraad.php
-// Omschrijving      : Dit is de voorraad beheer pagina
-// Naam ontwikkelaar : Thimo Kamp
-// Project           : Kringloop Centrum Duurzaam
-// Datum             : 28-01-2026
-//---------------------------------------------------------------------------------------------------// 
-
 // Fouten tonen (development)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -14,7 +6,7 @@ ini_set('display_errors', 1);
 // Start sessie
 session_start();
 
-// Include DB + helpers
+// Include DB + components
 require_once '../Config/DB_connect.php';
 require_once 'components/functions.inc.php';
 require_once 'components/adminnavbar.inc.php';
@@ -31,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
     // Lees en trim input
     $artikel_naam = trim($_POST['artikel_naam'] ?? '');
     $locatie = trim($_POST['locatie'] ?? '');
-    $aantal = (int)($_POST['aantal'] ?? 0); // forceer integer
+    $aantal = (int)($_POST['aantal'] ?? 0); 
     $status = trim($_POST['status'] ?? '');
 
     // Valideer invoer
@@ -75,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artikel_naam'])) {
             $status_obj = $stmt->fetch(PDO::FETCH_ASSOC);
             $status_id = $status_obj ? (int)$status_obj['id'] : 1; // 1 is default/status fallback
 
-            // Voeg voorraad toe (helper)
+            // Voeg voorraad toe
             if (voegVoorraadToe($conn, $artikel_id, $locatie, $aantal, $status_id)) {
                 // Redirect na succes 
                 header("Location: Voorraad.php?success=1");
@@ -192,7 +184,7 @@ $voorraad = haalAlleVoorraad($conn);
             </tbody>
         </table>
 
-        <!-- Footer/paginatie -->
+        <!-- Footer-->
         <div class="table-footer">
             <span><?php echo count($voorraad); ?> Resultaten</span>
             <div class="pagination">
@@ -202,21 +194,9 @@ $voorraad = haalAlleVoorraad($conn);
             </div>
         </div>
     <?php else: ?>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        <p>Geen artikelen in voorraad.</p>
-    <?php endif; ?>
-=======
-=======
->>>>>>> Stashed changes
         <!-- Geen items -->
         <p class="voorraadpar">Geen artikelen in voorraad.</p>
     <?php endif; ?>
 
 </body>
-<<<<<<< Updated upstream
 </html>
->>>>>>> Stashed changes
-=======
-</html>
->>>>>>> Stashed changes

@@ -9,7 +9,7 @@
 
 // Check of login input leeg is
 
-function emptyInputLogin($gebruiker, $ww) {
+function leegInvoerLogin($gebruiker, $ww) {
     if (empty($gebruiker) || empty($ww)) {
         return true;
     }
@@ -18,7 +18,7 @@ function emptyInputLogin($gebruiker, $ww) {
 
 // Check of gebruiker al bestaat
 
-function gebruikerExists($conn, $gebruiker) {
+function gebruikerBestaat($conn, $gebruiker) {
     $sql = "SELECT * FROM gebruiker WHERE gebruikersnaam = :gebruiker";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":gebruiker", $gebruiker);
@@ -34,27 +34,27 @@ function gebruikerExists($conn, $gebruiker) {
 
 // Inloggen
 
-function loginUser($conn, $gebruiker, $ww) {
+function loginGebruiker($conn, $gebruiker, $ww) {
 
-    $gebruikerExists = gebruikerExists($conn, $gebruiker);
+    $gevondenGebruiker = gebruikerBestaat($conn, $gebruiker);
 
-    if ($gebruikerExists === false) {
+    if ($gevondenGebruiker === false) {
         echo "<script>window.location.href = '../login.php?error=wrongLogin';</script>";
         
         exit();
     }
 
-    $db_ww = $gebruikerExists["wachtwoord"];
-    $wwHashed = hash('sha256', $ww);
+    $db_wachtwoord = $gevondenGebruiker["wachtwoord"];
+    $wwGehashed = hash('sha256', $ww);
 
-    if ($db_ww !== $wwHashed) {
+    if ($db_wachtwoord !== $wwGehashed) {
         echo "<script>window.location.href = '../login.php?error=wrongLogin';</script>";
         exit();
     }
 
     session_start();
-    $_SESSION["userid"] = $gebruikerExists["id"];
-    $_SESSION["role"] = $gebruikerExists["rollen"];
+    $_SESSION["userid"] = $gevondenGebruiker["id"];
+    $_SESSION["role"] = $gevondenGebruiker["rollen"];
 
     echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
@@ -134,9 +134,9 @@ function haalAlleStatuses($conn) {
 
 
 // ----------------------------------------------------
-// create category
-// ----------------------------------------------------
-   function createCategorie($conn, $code, $omschrijving) {
+   // maak categorie
+   // ----------------------------------------------------
+   function maakCategorie($conn, $code, $omschrijving) {
  
     $sql = "INSERT INTO categorie
             (code, omschrijving)
@@ -149,42 +149,41 @@ function haalAlleStatuses($conn) {
         ":omschrijving"     => $omschrijving
     ]);
  
-    header("Location: ../categorie.php?error=none");
     exit();
 }
 
 // ----------------------------------------------------
-// laad categorien
+// laad categorie
 // ----------------------------------------------------
-function loadCategorie($conn, $code, $omschrijving) {
+function laadCategorie($conn, $code) {
     $sql = "SELECT * FROM categorie WHERE code = :code";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":code", $gebruiker);
+    $stmt->bindParam(":code", $code);
     $stmt->execute();
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    
+    return $row;
 }
 
 
 
 // ----------------------------------------------------
-// Create gebruiker
+// maak medewerker
 // ----------------------------------------------------
 
-function createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
+function maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
  
     $sql = "INSERT INTO gebruiker (gebruikersnaam, wachtwoord, rollen, is_geverifieerd) VALUES (:gebruikersnaam, :wachtwoord, :rollen, :is_geverifieerd)";
  
     $stmt = $conn->prepare($sql);
  
     // Wachtwoord hashen
-    $wwHashed = hash('sha256', $wachtwoord);
+    $wwGehashed = hash('sha256', $wachtwoord);
  
     $stmt->execute([
         ':gebruikersnaam' => $gebruikersnaam,
-            ':wachtwoord' => $wwHashed,
+            ':wachtwoord' => $wwGehashed,
             ':rollen' => $rollen,
             ':is_geverifieerd' => $is_geverifieerd
     ]);

@@ -426,11 +426,7 @@ header nav a:hover {
     .voorraad{
         text-align: center;
     }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
+
     .Voorraadpar{
         margin-top: 20px;
         font-size: 18px;
@@ -440,98 +436,110 @@ header nav a:hover {
   VOORRAAD STYLES
 ====================== */
 
+:root {
+    --admin-width: 200px; /* keep in sync with .admin-navbar */
+    --content-offset: calc(var(--admin-width) + 60px); /* left gap from navbar */
+    --content-max-width: 1200px;
+    --content-right-gap: 40px;
+}
+
+/* Zorg dat alle voorraad elementen rechts van de zijbalk beginnen */
+.voorraad-header,
+.voorraad-table,
+.formulier-container,
+.table-footer,
+.error-msg {
+    margin-left: var(--content-offset);
+    max-width: var(--content-max-width);
+    width: calc(100% - var(--content-offset) - var(--content-right-gap));
+    padding-right: 10px;
+    background-color: transparent;
+}
+
 .voorraad-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 28px 20px;
     background-color: white;
-    max-width: 1200px;
-    margin: 0 auto;
+    box-shadow: none;
 }
 
 .voorraad-header h1 {
     margin: 0;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
 }
 
+/* Nieuwe item knop subtiel lila, zoals mock */
+.toggle-btn {
+    padding: 8px 14px;
+    background-color: #d3c6ee;
+    color: #2d1f5a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+.toggle-btn:hover {
+    background-color: #c3b6e8;
+}
+
+/* Tabel: wijd, veel witruimte en subtiele scheidingslijnen */
 .voorraad-table {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
-    border-collapse: collapse;
+    margin-top: 8px;
+    width: calc(100% - 0px);
+    border-collapse: separate;
+    border-spacing: 0 18px; /* verticale afstand tussen rijen */
 }
 
 .voorraad-table thead th {
     text-align: left;
-    padding: 15px;
-    border-bottom: 2px solid #ddd;
-    font-weight: 600;
-    color: #333;
+    padding: 10px 16px;
+    border-bottom: none;
+    font-weight: 700;
+    color: #777;
 }
 
 .voorraad-table tbody td {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
+    background: white;
+    padding: 22px 18px;
     vertical-align: middle;
+    border-bottom: 3px solid #bdbdbd; /* duidelijke lijn tussen items */
 }
 
-.voorraad-table tbody tr:hover {
-    background-color: #f9f9f9;
-}
-
-.voorraad-table input[type="checkbox"] {
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-}
-
-.actions {
-    text-align: right;
-}
+/* Checkbox kolom smaller */
+.voorraad-table tbody td:first-child { width: 48px; }
+.voorraad-table tbody td:nth-child(2) { width: 60px; }
 
 .menu-btn {
     background: none;
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #666;
-    padding: 5px 10px;
-    transition: color 0.2s;
+    color: #111;
+    padding: 8px 12px;
 }
 
-.menu-btn:hover {
-    color: #333;
-}
+.menu-btn:hover { color: #111; }
 
 .table-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-    margin: 20px auto;
-    max-width: 1200px;
-    width: 90%;
+    padding: 6px 0 40px 0;
+    margin-top: 10px;
     color: #666;
 }
 
-.pagination {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
+.pagination { display: flex; gap: 10px; align-items: center; }
+.paginatie-btn { background: none; border: none; cursor: pointer; color: #666; padding: 5px 10px; }
+.paginatie-btn:hover { color: #333; }
 
-.paginatie-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    padding: 5px 10px;
-    transition: color 0.2s;
-}
-
-.paginatie-btn:hover {
-    color: #333;
-}
 
 /* ======================
   FORMULIER STYLES
@@ -645,9 +653,5 @@ header nav a:hover {
 
 .Voorraadpar{
    text-align: center;
-<<<<<<< Updated upstream
+
 }
->>>>>>> Stashed changes
-=======
-}
->>>>>>> Stashed changes
