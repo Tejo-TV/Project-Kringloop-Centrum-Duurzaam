@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2026 at 02:27 PM
+-- Generation Time: Jan 29, 2026 at 01:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,6 +34,17 @@ CREATE TABLE `artikel` (
   `prijs_ex_btw` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `artikel`
+--
+
+INSERT INTO `artikel` (`id`, `categorie_id`, `naam`, `prijs_ex_btw`) VALUES
+(5, 1, 'klapstoel', 8.00),
+(6, 1, 'stoel', 0.00),
+(7, 1, 'radio', 0.00),
+(8, 1, 'waterfles', 0.00),
+(9, 1, 'fles', 0.00);
+
 -- --------------------------------------------------------
 
 --
@@ -42,10 +53,15 @@ CREATE TABLE `artikel` (
 
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `omschrijving` varchar(255) NOT NULL
-
+  `categorie` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `categorie`) VALUES
+(1, 'stoelen');
 
 -- --------------------------------------------------------
 
@@ -68,7 +84,7 @@ CREATE TABLE `gebruiker` (
 INSERT INTO `gebruiker` (`id`, `gebruikersnaam`, `wachtwoord`, `rollen`, `is_geverifieerd`) VALUES
 (1, 'Gebruiker1', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'admin', 2),
 (2, 'Gebruiker2', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'directie', 2),
-(3, 'Gebruiker3', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'medewerker', 2),
+(3, 'Gebruiker3', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'magazijnmedewerker', 2),
 (4, 'Gebruiker4', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'chauffeur', 2);
 
 -- --------------------------------------------------------
@@ -85,6 +101,13 @@ CREATE TABLE `klant` (
   `telefoon` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `klant`
+--
+
+INSERT INTO `klant` (`id`, `naam`, `adres`, `plaats`, `telefoon`, `email`) VALUES
+(1, 'karel ', '8811FF', 'Amsterdam', '123456789', 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -111,6 +134,13 @@ CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `status`) VALUES
+(1, 'beschikbaar');
 
 -- --------------------------------------------------------
 
@@ -139,6 +169,17 @@ CREATE TABLE `voorraad` (
   `status_id` int(11) NOT NULL,
   `ingeboekt_op` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `voorraad`
+--
+
+INSERT INTO `voorraad` (`id`, `artikel_id`, `locatie`, `aantal`, `status_id`, `ingeboekt_op`) VALUES
+(1, 6, '?', 3, 1, '2026-01-29 09:14:12'),
+(2, 7, '?', 1, 1, '2026-01-29 09:15:27'),
+(3, 8, 'doos 7', 5, 1, '2026-01-29 09:42:36'),
+(4, 9, 'doos 3', 5, 1, '2026-01-29 13:26:33'),
+(5, 9, 'doos 3', 5, 1, '2026-01-29 13:27:01');
 
 --
 -- Indexes for dumped tables
@@ -207,13 +248,13 @@ ALTER TABLE `voorraad`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gebruiker`
@@ -225,7 +266,7 @@ ALTER TABLE `gebruiker`
 -- AUTO_INCREMENT for table `klant`
 --
 ALTER TABLE `klant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `planning`
@@ -237,7 +278,7 @@ ALTER TABLE `planning`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `verkopen`
@@ -249,7 +290,7 @@ ALTER TABLE `verkopen`
 -- AUTO_INCREMENT for table `voorraad`
 --
 ALTER TABLE `voorraad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

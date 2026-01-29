@@ -112,6 +112,7 @@ header nav a:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .admin-button:hover {
     background-color: #646464;
     border-radius: 3px;
@@ -444,7 +445,7 @@ header nav a:hover {
 .formulier-container,
 .table-footer,
 .error-msg {
-    margin-left: var(--content-offset);
+    margin-left: 200px;
     max-width: var(--content-max-width);
     width: calc(100% - var(--content-offset) - var(--content-right-gap));
     padding-right: 10px;
@@ -685,7 +686,7 @@ header nav a:hover {
    ====================== */
 
 .ritten-container {
-    margin-left: var(--content-offset);
+    margin-left: 200px;
     max-width: var(--content-max-width);
     width: calc(100% - var(--content-offset) - var(--content-right-gap));
     padding: 20px 40px;
