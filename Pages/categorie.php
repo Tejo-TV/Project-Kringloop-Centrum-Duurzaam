@@ -9,16 +9,15 @@
 session_start();
 
 // Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
-
-
-
-
 // if (isset($_SESSION["userid"])) {
 //     echo "<div class='popup2'> You are logged in. </div>";
 // } else {
 //     header("Location: login.php?error=notLoggedIn");
 //     exit();
 // }
+
+
+
 
 
 ?>
