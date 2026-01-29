@@ -47,7 +47,7 @@ if(isset($_GET["error"])) {
                         <a href="#">Klantgegevens</a>
                         <a href="Voorraad.php">Voorraadbeheer</a>
                         <a href="#">Opbrengst</a>
-                        <a href="make_user.php">Medewerkers</a>';
+                        <a href="user_edit.php">Medewerkers</a>';
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <a href="instellingen.php">Instellingen</a>
                         <a href="#">Opbrengst</a>
@@ -100,7 +100,7 @@ if(isset($_GET["error"])) {
                         <div class="dashboard-content">
                             <h1>Medewerkers</h1>
                             <p>Beheer medewerkers en hun toewijzingen.</p>
-                            <a href="make_user.php">Ga naar Medewerkers</a>
+                            <a href="user_edit.php">Ga naar Medewerkers</a>
                         </div>';
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <div class="dashboard-content">

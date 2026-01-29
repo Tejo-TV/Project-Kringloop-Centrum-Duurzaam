@@ -1,5 +1,5 @@
 <?php
-require_once '../Config/DB_connect.php';
+    require_once '../../Config/DB_connect.php';
     require_once 'functions.inc.php';
 
     $db = new Database();
@@ -11,7 +11,7 @@ if (isset($_POST["makeuser"])) {
     $wachtwoord = $_POST["wachtwoord"];
     $rollen = $_POST["rollen"];
     $is_geverifieerd = $_POST["is_geverifieerd"];
-    createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd);
+    maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd);
 }
 
 // Update medewerker

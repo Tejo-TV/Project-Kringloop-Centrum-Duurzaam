@@ -56,9 +56,14 @@ function loginGebruiker($conn, $gebruiker, $ww) {
     }
 
     session_start();
+    // Zet sessie variabelen
     $_SESSION["userid"] = $gebruikerExists["id"];
-    $_SESSION["role"] = $gebruikerExists["rollen"];
-    $_SESSION['username'] = $gebruikerExists['gebruikersnaam'];
+    
+    // Zet rol, als magazijnmedewerker of winkeledewerker dan 'medewerker'
+    $role = $gebruikerExists["rollen"];
+    $_SESSION["role"] = ($role == "magazijnmedewerker" || $role == "winkeledewerker") ? "medewerker" : $role;
+    
+
 
     echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
     exit();
