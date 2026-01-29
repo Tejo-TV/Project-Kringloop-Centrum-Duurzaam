@@ -1,5 +1,5 @@
 <?php
-    require_once '../../Config/DB_connect.php';
+    require_once '../Config/DB_connect.php';
     require_once 'functions.inc.php';
 
     $db = new Database();

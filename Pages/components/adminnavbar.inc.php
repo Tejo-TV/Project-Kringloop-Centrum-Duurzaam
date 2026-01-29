@@ -12,7 +12,7 @@
 <div class="admin-navbar">
     
         <a class="admin-button" href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
-        <a class="admin-button" href="make_user.php"><i class="fa-solid fa-bars"></i> Persoonsgegevens</a>
+        <a class="admin-button" href="user_edit.php"><i class="fa-solid fa-bars"></i> Persoonsgegevens</a>
         <a class="admin-button" href="make_customer.php"><i class="fa-solid fa-bars"></i> Klantgegevens</a>
         <a class="admin-button" href="voorraad.php"><i class="fa-solid fa-bars"></i> Voorraadbeheer</a>
         <a class="admin-button" href="categorie.php"><i class="fa-solid fa-bars"></i> categorie</a>
