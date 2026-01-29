@@ -148,7 +148,7 @@ function haalAlleStatuses($conn) {
         ":code"             => $code,
         ":omschrijving"     => $omschrijving
     ]);
- 
+ echo "<script>window.location.href = '../categorie.php?error=none';</script>";
     exit();
 }
 
@@ -158,9 +158,8 @@ function haalAlleStatuses($conn) {
 
 function haalAlleCategorien($conn) {
     $stmt = $conn->prepare(
-        "SELECT a.id, a.code, a.omschrijving 
-         FROM categorie a
-         ORDER BY a.id ASC"
+        "SELECT id, code, omschrijving 
+         FROM categorie"
     );
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -170,9 +169,12 @@ function haalAlleCategorien($conn) {
 
 // Verwijder categorie
 function verwijdercategorie($conn, $categorieID) {
-    $stmt = $conn->prepare("DELETE FROM categorie WHERE id = :id");
-    $stmt->bindParam(":id", $categorieID);
-    return $stmt->execute();
+
+
+//    $stmt = $conn->prepare("DELETE FROM categorie WHERE id = :id");
+  //  $stmt->bindParam(":id", $categorieID);
+//    return $stmt->execute();
+return   $categorieID;
 }
 
 
