@@ -30,30 +30,46 @@ $categorien = haalAlleCategorien($conn);
     <link rel="stylesheet" href="../assets/CSS/Style.css" />
 </head>
 
-   <h1 class="Voorraad">Voorraad Overzicht</h1>
 
+   <!-- categorien tabel -->
     <?php if ($categorien): ?>
-        <table>
+        <table class="voorraad-table">
             <thead>
                 <tr>
+                    <th><input type="checkbox" class="select-all"></th>
                     <th>ID</th>
                     <th>Code</th>
                     <th>Omschrijving</th>
-              
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($categorien as $item): ?>
                     <tr>
+                         <!-- Checkbox per rij -->
+                        <td><input type="checkbox" class="item-checkbox"></td> 
                         <td><?= htmlspecialchars($item['id']) ?></td>
                         <td><?= htmlspecialchars($item['code']) ?></td>
                         <td><?= htmlspecialchars($item['omschrijving']) ?></td>
+                          <td class="actions"><button class="menu-btn">⋮</button></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+
+   <!-- Footer/paginatie -->
+        <div class="table-footer">
+            <span><?php echo count($categorien); ?> Resultaten</span>
+            <div class="pagination">
+                <button class="paginatie-btn">‹ Vorige</button>
+                <span>1</span>
+                <button class="paginatie-btn">Volgende ›</button>
+            </div>
+        </div>
     <?php else: ?>
-        <p>Geen categorien.</p>
+        <!-- Geen items -->
+        <p class="voorraadpar">Geen artikelen in voorraad.</p>
     <?php endif; ?>
 
 </body>
