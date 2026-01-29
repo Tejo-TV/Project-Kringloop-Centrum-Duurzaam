@@ -203,13 +203,20 @@ $voorraad = haalAlleVoorraad($conn);
         </div>
     <?php else: ?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <p>Geen artikelen in voorraad.</p>
     <?php endif; ?>
 =======
+=======
+>>>>>>> Stashed changes
         <!-- Geen items -->
         <p class="voorraadpar">Geen artikelen in voorraad.</p>
     <?php endif; ?>
 
 </body>
+<<<<<<< Updated upstream
+</html>
+>>>>>>> Stashed changes
+=======
 </html>
 >>>>>>> Stashed changes
