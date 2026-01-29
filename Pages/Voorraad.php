@@ -175,7 +175,7 @@ $voorraad = haalAlleVoorraad($conn);
     </div>
 
     <script>
-        /* Toggle formulier */
+       
         function toggleFormulier() {
             const formulierContainer = document.getElementById('formulierContainer');
             formulierContainer.classList.toggle('active');
