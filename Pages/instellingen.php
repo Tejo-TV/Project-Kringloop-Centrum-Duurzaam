@@ -46,7 +46,7 @@ $username = $row['gebruikersnaam'];
 <body>
         <!-- Header -->
     <header>
-        <a href="index.php">Kringloop centrum</a>
+        <a href="dashboard.php">Kringloop centrum</a>
         <nav>
             <a href="dashboard.php">Dashboard</a>
             <?php 
@@ -59,17 +59,17 @@ $username = $row['gebruikersnaam'];
                         <a href="#">Opbrengst</a>
                         <a href="make_user.php">Medewerkers</a>';
             } else if ($_SESSION["role"] == 'directie') {
-                echo '  <a href="#">Instellingen</a>
+                echo '  <a href="#" class="deze_pagina">Instellingen</a>
                         <a href="#">Opbrengst</a>
                         <a href="Voorraad.php">Voorraadbeheer</a>';
             } else if ($_SESSION["role"] == 'medewerker') {
-                echo '  <a href="#">Instellingen</a>
+                echo '  <a href="#" class="deze_pagina">Instellingen</a>
                         <a href="Voorraad.php">Voorraadbeheer</a>';
             } else if ($_SESSION["role"] == 'chauffeur') {
-                echo '  <a href="#">Instellingen</a>
+                echo '  <a href="#" class="deze_pagina">Instellingen</a>
                         <a href="ritten.php">Ritten</a>';
             } else {
-                echo '<a href="#">Instellingen</a>';
+                echo '<a href="#" class="deze_pagina">Instellingen</a>';
             }
             ?>
 

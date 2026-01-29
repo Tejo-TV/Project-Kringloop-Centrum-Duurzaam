@@ -47,7 +47,7 @@ if(isset($_GET["error"])) {
     
     <!-- Header -->
     <header>
-        <a href="index.php">Kringloop centrum</a>
+        <a href="../index.php">Kringloop centrum</a>
     </header>
 
 

@@ -26,7 +26,9 @@ $voorraad = haalAlleVoorraad($conn);
 <head>
     <meta charset="UTF-8">
     <title>Voorraad</title>
+    <link rel="shortcut icon" type="x-icon" href="../Assets/Images/centrum-duurzaam-icon.png">
     <link rel="stylesheet" href="../Assets/CSS/Style.css">
+    
 </head>
 <body>
     <h1 class="Voorraad">Voorraad Overzicht</h1>
