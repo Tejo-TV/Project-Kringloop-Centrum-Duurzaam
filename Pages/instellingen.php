@@ -57,7 +57,7 @@ $username = $row['gebruikersnaam'];
                         <a href="#">Klantgegevens</a>
                         <a href="Voorraad.php">Voorraadbeheer</a>
                         <a href="#">Opbrengst</a>
-                        <a href="make_user.php">Medewerkers</a>';
+                        <a href="user_edit.php">Medewerkers</a>';
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <a href="#" class="deze_pagina">Instellingen</a>
                         <a href="#">Opbrengst</a>

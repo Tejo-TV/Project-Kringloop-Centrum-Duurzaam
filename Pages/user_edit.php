@@ -45,7 +45,7 @@ if (!isset($_SESSION["userid"])) {
                         <a href="#">Opbrengst</a>
                         <a href="user_edit.php" class="deze_pagina">Medewerkers</a>';
             } else if ($_SESSION["role"] == 'directie') {
-                echo '  <a href="instellingen.php">Instellingen</a>
+                echo '  <a href="instellingen.php">Instellingen</a> 
                         <a href="#">Opbrengst</a>
                         <a href="Voorraad.php">Voorraadbeheer</a>';
             } else if ($_SESSION["role"] == 'medewerker') {
