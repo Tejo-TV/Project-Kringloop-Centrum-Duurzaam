@@ -90,6 +90,21 @@ function updateGebruiker($conn, $id, $gebruiker, $ww) {
 }
 
 // ----------------------------------------------------
+// Haal alle ritten op
+// ----------------------------------------------------
+function Ritten($conn){
+    $sql = "SELECT planning.id, planning.artikel_id, planning.klant_id, planning.kenteken, planning.ophalen_of_bezorgen, planning.afspraak_op, 
+            artikel.naam as artikel_naam, klant.naam as klant_naam, klant.adres, klant.plaats
+            FROM planning
+            LEFT JOIN artikel ON planning.artikel_id = artikel.id
+            LEFT JOIN klant ON planning.klant_id = klant.id
+            ORDER BY planning.afspraak_op DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// ----------------------------------------------------
 // Voorraad validatie
 // ----------------------------------------------------
 function emptyInputVoorraadToevoegen($artikel_id, $locatie, $aantal, $status_id) {
@@ -202,11 +217,61 @@ function haalAlleStatuses($conn) {
 function haalAlleCategorien($conn) {
     $sql = "SELECT * FROM categorie";
     $stmt = $conn->prepare($sql);
+// Create Rit
+function createRit($conn, $artikel_id, $klant_id, $kenteken, $ophalen_of_bezorgen, $afspraak_op) {
+    $stmt = $conn->prepare(
+        "INSERT INTO planning (artikel_id, klant_id, kenteken, ophalen_of_bezorgen, afspraak_op) 
+         VALUES (:artikel_id, :klant_id, :kenteken, :ophalen_of_bezorgen, :afspraak_op)"
+    );
+    $stmt->bindParam(":artikel_id", $artikel_id);
+    $stmt->bindParam(":klant_id", $klant_id);
+    $stmt->bindParam(":kenteken", $kenteken);
+    $stmt->bindParam(":ophalen_of_bezorgen", $ophalen_of_bezorgen);
+    $stmt->bindParam(":afspraak_op", $afspraak_op);
+    return $stmt->execute();
+}
+
+// Edit Rit
+function updateRit($conn, $id, $artikel_id, $klant_id, $kenteken, $ophalen_of_bezorgen, $afspraak_op) {
+    $stmt = $conn->prepare(
+        "UPDATE planning SET artikel_id = :artikel_id, klant_id = :klant_id, 
+         kenteken = :kenteken, ophalen_of_bezorgen = :ophalen_of_bezorgen, afspraak_op = :afspraak_op 
+         WHERE id = :id"
+    );
+    $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":artikel_id", $artikel_id);
+    $stmt->bindParam(":klant_id", $klant_id);
+    $stmt->bindParam(":kenteken", $kenteken);
+    $stmt->bindParam(":ophalen_of_bezorgen", $ophalen_of_bezorgen);
+    $stmt->bindParam(":afspraak_op", $afspraak_op);
+    return $stmt->execute();
+}
+// Delete Rit
+function deleteRit($conn, $id) {
+    $stmt = $conn->prepare("DELETE FROM planning WHERE id = :id");
+    $stmt->bindParam(":id", $id);
+    return $stmt->execute();
+}
+// Haal Rit op met ID
+function getRitById($conn, $id) {
+    $stmt = $conn->prepare(
+        "SELECT planning.id, planning.artikel_id, planning.klant_id, planning.kenteken, 
+         planning.ophalen_of_bezorgen, planning.afspraak_op, 
+         artikel.naam as artikel_naam, klant.naam as klant_naam, klant.adres, klant.plaats
+         FROM planning
+         LEFT JOIN artikel ON planning.artikel_id = artikel.id
+         LEFT JOIN klant ON planning.klant_id = klant.id
+         WHERE planning.id = :id"
+    );
+    $stmt->bindParam(":id", $id);
     $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    
+function haalAlleKlanten($conn) {
+    $stmt = $conn->prepare("SELECT id, naam FROM klant ORDER BY naam ASC");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
