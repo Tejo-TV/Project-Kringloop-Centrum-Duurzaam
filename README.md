@@ -19,5 +19,8 @@ Om de website te gebruiken, moet je eerst de database instellen. Volg deze stapp
    * Klik op **Bestand Kiezen** en selecteer `duurzaam.sql` uit de MySQL map.
    * Scroll omlaag en druk op **Importeren**.
 6. **Bevestiging** - Zodra het importeren klaar is, is de database gereed.
+7. **Account** - Om in te loggen, gebruik de volgende inloggegevens:
+   - **Gebruikersnaam:** Gebruiker1
+   - **Wachtwoord:** 12345
 
 🎉 Gefeliciteerd! Je database is nu ingesteld en de website zou goed moeten functioneren.
