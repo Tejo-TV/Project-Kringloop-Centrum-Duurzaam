@@ -14,7 +14,7 @@ if (isset($_POST["maak"])) {
     $db = new Database();
     $conn = $db->getConnection();
     
-createCategorie ($conn, $code, $omschrijving);
+maakCategorie($conn, $code, $omschrijving);
 
     };
  

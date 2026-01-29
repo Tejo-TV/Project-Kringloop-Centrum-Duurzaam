@@ -12,7 +12,7 @@ if (isset($_POST["makeuser"])) {
     $db = new Database();
     $conn = $db->getConnection();
 
-    createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd);
+    maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd);
 
 } else {
     echo "test";
