@@ -31,7 +31,7 @@ if (isset($_SESSION["userid"])) {
     <header>
         <a href="index.php">Kringloop centrum</a>
         <nav>
-            <a href="pages/login.php">Aanmelden</a>
+            <a href="login.php">Aanmelden</a>
         </nav>
     </header>
 
