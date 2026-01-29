@@ -1,25 +1,25 @@
 <?php
 //---------------------------------------------------------------------------------------------------//
-// Naam script       : Addcategorie.php
-// Omschrijving      : Dit is de categorie toevoegings pagina van het Kringloop Centrum Duurzaam
-// Naam ontwikkelaar : Kieran Teunissen
+// Naam script       : Voorraad.php
+// Omschrijving      : Dit is de voorraad beheer pagina
+// Naam ontwikkelaar : Thimo Kamp
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
 //---------------------------------------------------------------------------------------------------// 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 
-// Als je niet bent ingelogd, stuur je terug naar de login pagina anders popup.
-// if (isset($_SESSION["userid"])) {
-//     echo "<div class='popup2'> You are logged in. </div>";
-// } else {
-//     header("Location: login.php?error=notLoggedIn");
-//     exit();
-// }
 
+require_once '../Config/DB_connect.php';
+require_once 'components/functions.inc.php';
+require_once 'components/adminnavbar.inc.php';
 
+$db = new Database();
+$conn = $db->getConnection();
 
-
-
+$categorien = haalAlleCategorien($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,10 +29,32 @@ session_start();
     <title>Dashboard</title>
     <link rel="stylesheet" href="../assets/CSS/Style.css" />
 </head>
-<body>
-    
 
+   <h1 class="Voorraad">Voorraad Overzicht</h1>
 
+    <?php if ($categorien): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Code</th>
+                    <th>Omschrijving</th>
+              
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($categorien as $item): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($item['id']) ?></td>
+                        <td><?= htmlspecialchars($item['code']) ?></td>
+                        <td><?= htmlspecialchars($item['omschrijving']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Geen categorien.</p>
+    <?php endif; ?>
 
 </body>
 </html>

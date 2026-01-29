@@ -134,7 +134,7 @@ function haalAlleStatuses($conn) {
 
 
 // ----------------------------------------------------
-// create category
+// create categorie
 // ----------------------------------------------------
    function createCategorie($conn, $code, $omschrijving) {
  
@@ -154,19 +154,27 @@ function haalAlleStatuses($conn) {
 }
 
 // ----------------------------------------------------
-// laad categorien
+// Haal categorien op
 // ----------------------------------------------------
-function loadCategorie($conn, $code, $omschrijving) {
-    $sql = "SELECT * FROM categorie WHERE code = :code";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":code", $gebruiker);
+
+function haalAlleCategorien($conn) {
+    $stmt = $conn->prepare(
+        "SELECT a.id, a.code, a.omschrijving 
+         FROM categorie a
+         ORDER BY a.id ASC"
+    );
     $stmt->execute();
-
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+
+// Verwijder categorie
+function verwijdercategorie($conn, $categorieID) {
+    $stmt = $conn->prepare("DELETE FROM categorie WHERE id = :id");
+    $stmt->bindParam(":id", $categorieID);
+    return $stmt->execute();
+}
 
 
 // ----------------------------------------------------
