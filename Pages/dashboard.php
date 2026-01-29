@@ -36,7 +36,7 @@ if(isset($_GET["error"])) {
     <header>
         <a href="index.php">Kringloop centrum</a>
         <nav>
-            <a href="#">Dashboard</a>
+            <a href="#" class="deze_pagina">Dashboard</a>
             <?php 
             // Toon menu opties op basis van gebruikersrol
             if ($_SESSION["role"] == 'admin') {
@@ -72,76 +72,76 @@ if(isset($_GET["error"])) {
             if ($_SESSION["role"] == 'admin') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de jou gegevens.</p>
                             <a href="#">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Ritten</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer en volg alle transportritten en leveringen.</p>
                             <a href="ritten.php">Ga naar Ritten</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Klantgegevens</h1>
-                            <p>Beschrijving</p>
+                            <p>Bekijk en beheer informatie van alle klanten en contacten.</p>
                             <a href="#">Ga naar Klantgegevens</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de voorraad en track beschikbare items.</p>
                             <a href="Voorraad.php">Ga naar Voorraadbeheer</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Opbrengst</h1>
-                            <p>Beschrijving</p>
+                            <p>Analyseer financiële resultaten en opbrengsten.</p>
                             <a href="#">Ga naar Opbrengst</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Medewerkers</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer medewerkers en hun toewijzingen.</p>
                             <a href="make_user.php">Ga naar Medewerkers</a>
                         </div>';
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de jou gegevens.</p>
                             <a href="#">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de voorraad en track beschikbare items.</p>
                             <a href="#">Ga naar Voorraadbeheer</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Opbrengst</h1>
-                            <p>Beschrijving</p>
+                            <p>Analyseer financiële resultaten en opbrengsten.</p>
                             <a href="Voorraad.php">Ga naar Opbrengst</a>
                         </div>';
             } else if ($_SESSION["role"] == 'medewerker') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de jou gegevens.</p>
                             <a href="#">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de voorraad en track beschikbare items.</p>
                             <a href="Voorraad.php">Ga naar Voorraadbeheer</a>
                         </div>';
             } else if ($_SESSION["role"] == 'chauffeur') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de jou gegevens.</p>
                             <a href="#">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Ritten</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer en volg alle transportritten en leveringen.</p>
                             <a href="ritten.php">Ga naar Ritten</a>
                         </div>';
             } else {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beschrijving</p>
+                            <p>Beheer de jou gegevens.</p>
                             <a href="">Ga naar Instellingen</a>
                         </div>';
             }

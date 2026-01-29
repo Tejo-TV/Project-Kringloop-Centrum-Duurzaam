@@ -83,6 +83,10 @@ header nav a:hover {
   box-shadow: 0 5px 15px #0000004d;
   border-color: #ffffffcc;
 }
+
+.deze_pagina {
+    text-decoration: underline;
+}
 /* ======================
   ADMIN NAVBAR 
 ====================== */
