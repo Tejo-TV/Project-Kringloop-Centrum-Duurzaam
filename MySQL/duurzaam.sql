@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2026 at 09:10 AM
+-- Generation Time: Jan 28, 2026 at 02:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,7 +42,9 @@ CREATE TABLE `artikel` (
 
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
-  `categorie` varchar(255) NOT NULL
+  `code` varchar(255) NOT NULL,
+  `omschrijving` varchar(255) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -58,6 +60,16 @@ CREATE TABLE `gebruiker` (
   `rollen` text NOT NULL,
   `is_geverifieerd` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gebruiker`
+--
+
+INSERT INTO `gebruiker` (`id`, `gebruikersnaam`, `wachtwoord`, `rollen`, `is_geverifieerd`) VALUES
+(1, 'Gebruiker1', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'admin', 2),
+(2, 'Gebruiker2', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'directie', 2),
+(3, 'Gebruiker3', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'medewerker', 2),
+(4, 'Gebruiker4', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'chauffeur', 2);
 
 -- --------------------------------------------------------
 
@@ -202,6 +214,12 @@ ALTER TABLE `artikel`
 --
 ALTER TABLE `categorie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gebruiker`
+--
+ALTER TABLE `gebruiker`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `klant`
