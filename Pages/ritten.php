@@ -1,7 +1,7 @@
 <?php 
 //---------------------------------------------------------------------------------------------------//
-// Naam script       : Voorraad.php
-// Omschrijving      : Dit is de voorraad beheer pagina
+// Naam script       : Ritten.php
+// Omschrijving      : Dit is de ritten beheer pagina
 // Naam ontwikkelaar : Kevin van Lit
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026

@@ -1,5 +1,11 @@
 <?php
-
+//---------------------------------------------------------------------------------------------------//
+// Naam script       : Voorraad.php
+// Omschrijving      : Dit is de voorraad beheer pagina
+// Naam ontwikkelaar : Thimo Kamp
+// Project           : Kringloop Centrum Duurzaam
+// Datum             : 28-01-2026
+//---------------------------------------------------------------------------------------------------// 
 
 // Fouten tonen (development)
 error_reporting(E_ALL);

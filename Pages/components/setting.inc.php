@@ -23,7 +23,7 @@ if (isset($_POST["update_settings"])) {
     $conn = $db->getConnection();
 
     // logt de gebruiker in
-    updateUser($conn, $id, $gebruiker, $ww);
+    updateGebruiker($conn, $id, $gebruiker, $ww);
 } else {
     // als iemand probeert deze pagina te benaderen zonder op de inloggen knop te drukken wordt die terug gestuurd naar de login pagina./
     echo "<script>window.location.href = '../login.php?error=wrongWay';</script>";

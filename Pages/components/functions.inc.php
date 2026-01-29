@@ -10,7 +10,7 @@
 // ----------------------------------------------------
 // Check of login input leeg is
 // ----------------------------------------------------
-function emptyInputLogin($gebruiker, $ww) {
+function leegInvoerLogin($gebruiker, $ww) {
     if (empty($gebruiker) || empty($ww)) {
         return true;
     }
@@ -37,7 +37,7 @@ function gebruikerExists($conn, $gebruiker) {
 // ----------------------------------------------------
 // Inloggen
 // ----------------------------------------------------
-function loginUser($conn, $gebruiker, $ww) {
+function loginGebruiker($conn, $gebruiker, $ww) {
 
     $gebruikerExists = gebruikerExists($conn, $gebruiker);
 
@@ -67,7 +67,7 @@ function loginUser($conn, $gebruiker, $ww) {
 // ----------------------------------------------------
 // Update gebruiker instellingen
 // ----------------------------------------------------
-function updateUser($conn, $id, $gebruiker, $ww) {
+function updateGebruiker($conn, $id, $gebruiker, $ww) {
     if (isset($ww)) {
         $wwHashed = hash('sha256', $ww);
         $stmt = $conn->prepare("UPDATE gebruiker SET gebruikersnaam = :gebruiker, wachtwoord = :ww WHERE id = :id");
@@ -179,7 +179,7 @@ function haalAlleStatuses($conn) {
 // ----------------------------------------------------
 // Create category
 // ----------------------------------------------------
-   function createCategorie($conn, $code, $omschrijving) {
+   function maakCategorie($conn, $code, $omschrijving) {
  
     $sql = "INSERT INTO categorie
             (code, omschrijving)
@@ -216,7 +216,7 @@ function loadCategorie($conn, $code, $omschrijving) {
 // Create gebruiker
 // ----------------------------------------------------
 
-function createMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
+function maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
  
     $sql = "INSERT INTO gebruiker (gebruikersnaam, wachtwoord, rollen, is_geverifieerd) VALUES (:gebruikersnaam, :wachtwoord, :rollen, :is_geverifieerd)";
  
