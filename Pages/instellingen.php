@@ -93,7 +93,7 @@ $username = $row['gebruikersnaam'];
                     <!-- Wachtwoord -->
                     <div class="input-group">
                         <label>Wachtwoord:</label>
-                        <input type="password" name="new_ww" placeholder="Voer je wachtwoord in (optioneel)" minlength="8" />
+                        <input type="password" name="new_ww" placeholder="Voer je nieuwe wachtwoord in (optioneel)" minlength="8" maxlength="255" />
                     </div>
 
                     <!-- Geeft de userid mee -->

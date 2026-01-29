@@ -30,11 +30,36 @@ if (!isset($_SESSION["userid"])) {
 </head>
 <body>
     
-    <!-- Header -->
+        <!-- Header -->
     <header>
-        <a href="index.php">Kringloop centrum</a>
+        <a href="dashboard.php">Kringloop centrum</a>
         <nav>
-            <a href="login.php">Aanmelden</a>
+            <a href="#">Dashboard</a>
+            <?php 
+            // Toon menu opties op basis van gebruikersrol
+            if ($_SESSION["role"] == 'admin') {
+                echo '  <a href="instellingen.php">Instellingen</a>
+                        <a href="ritten.php">Ritten</a>
+                        <a href="#">Klantgegevens</a>
+                        <a href="Voorraad.php">Voorraadbeheer</a>
+                        <a href="#">Opbrengst</a>
+                        <a href="user_edit.php" class="deze_pagina">Medewerkers</a>';
+            } else if ($_SESSION["role"] == 'directie') {
+                echo '  <a href="instellingen.php">Instellingen</a>
+                        <a href="#">Opbrengst</a>
+                        <a href="Voorraad.php">Voorraadbeheer</a>';
+            } else if ($_SESSION["role"] == 'medewerker') {
+                echo '  <a href="instellingen.php">Instellingen</a>
+                        <a href="Voorraad.php">Voorraadbeheer</a>';
+            } else if ($_SESSION["role"] == 'chauffeur') {
+                echo '  <a href="instellingen.php">Instellingen</a>
+                        <a href="ritten.php">Ritten</a>';
+            } else {
+                echo '<a href="instellingen.php">Instellingen</a>';
+            }
+            ?>
+
+            <a class="header-button2" href="components/logout.inc.php">Uitloggen</a>
         </nav>
     </header>
 
@@ -47,13 +72,13 @@ if (!isset($_SESSION["userid"])) {
                 <input type="text" id="gebruikersnaam" name="gebruikersnaam" maxlength="255" required><br><br>
 
                 <label for="wachtwoord">Wachtwoord:</label><br>
-                <input type="password" id="wachtwoord" name="wachtwoord" maxlength="255" required><br><br>
+                <input type="password" id="wachtwoord" name="wachtwoord" minlength="8" maxlength="255" required><br><br>
 
                 <label for="rollen">Rol:</label><br>
                 <select id="rollen" name="rollen" required>
-                    <option value="Directielid">Directielid</option>
-                    <option value="magazijnmedewerker">Magazijnmedewerker</option>
-                    <option value="winkelmedewerker">Winkelmedewerker</option>
+                    <option value="directie">Directielid</option>
+                    <option value="magazijnmedewerker">magazijnmedewerker</option>
+                    <option value="winkelmedewerker">winkelmedewerker</option>
                     <option value="chauffeur">Chauffeur</option>
                 </select><br><br>
 
