@@ -50,31 +50,29 @@ if(isset($_GET["error"])) {
         <a href="../index.php">Kringloop centrum</a>
     </header>
 
-
-</div class="login-container">
+    <!-- Body -->
     <div class="login-form">
-        <h2>Login Form</h2>
+        <h2>Inloggen</h2>
 
         <form action="components/login.inc.php" method="POST">
 
-                <!-- Gebruikersnaam -->
-                <div class="input-group">
-                    <label>Gebruikersnaam:</label>
-                    <input type="text" name="gebruiker" placeholder="Enter your gebruikersnaam" required />
-                </div>
+            <!-- Gebruikersnaam -->
+            <div class="input-group">
+                <label>Gebruikersnaam:</label>
+                <input type="text" name="gebruiker" placeholder="Voer je gebruikersnaam in" required />
+            </div>
 
-                <!-- Wachtwoord -->
-                <div class="input-group">
-                    <label>Wachtwoord:</label>
-                    <input type="password" name="ww" placeholder="Enter your password" required />
-                </div>
+            <!-- Wachtwoord -->
+            <div class="input-group">
+                <label>Wachtwoord:</label>
+                <input type="password" name="ww" placeholder="Voer je wachtwoord in" required />
+            </div>
 
-                <!-- Register Button -->
-                <div class="button-row">
-                    <button type="submit" name="login" class="login-btn">Login</button>
-                </div>
-            </form>
-        </div>
+            <!-- Login Button -->
+            <div class="button-row">
+                <button type="submit" name="login" class="login-btn">Inloggen</button>
+            </div>
+        </form>
     </div>
 
 </body>

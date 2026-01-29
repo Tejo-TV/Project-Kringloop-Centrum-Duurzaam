@@ -1,4 +1,3 @@
-
 <?php
 //---------------------------------------------------------------------------------------------------//
 // Naam script       : dashboard.php
@@ -106,23 +105,23 @@ if(isset($_GET["error"])) {
             } else if ($_SESSION["role"] == 'directie') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beheer de jou gegevens.</p>
+                            <p>Beheer je persoonlijke gegevens.</p>
                             <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Voorraadbeheer</h1>
                             <p>Beheer de voorraad en track beschikbare items.</p>
-                            <a href="#">Ga naar Voorraadbeheer</a>
+                            <a href="Voorraad.php">Ga naar Voorraadbeheer</a>
                         </div>
                         <div class="dashboard-content">
                             <h1>Opbrengst</h1>
                             <p>Analyseer financiële resultaten en opbrengsten.</p>
-                            <a href="Voorraad.php">Ga naar Opbrengst</a>
+                            <a href="#">Ga naar Opbrengst</a>
                         </div>';
             } else if ($_SESSION["role"] == 'medewerker') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beheer de jou gegevens.</p>
+                            <p>Beheer je persoonlijke gegevens.</p>
                             <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
@@ -133,7 +132,7 @@ if(isset($_GET["error"])) {
             } else if ($_SESSION["role"] == 'chauffeur') {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beheer de jou gegevens.</p>
+                            <p>Beheer je persoonlijke gegevens.</p>
                             <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>
                         <div class="dashboard-content">
@@ -144,7 +143,7 @@ if(isset($_GET["error"])) {
             } else {
                 echo '  <div class="dashboard-content">
                             <h1>Instellingen</h1>
-                            <p>Beheer de jou gegevens.</p>
+                            <p>Beheer je persoonlijke gegevens.</p>
                             <a href="instellingen.php">Ga naar Instellingen</a>
                         </div>';
             }

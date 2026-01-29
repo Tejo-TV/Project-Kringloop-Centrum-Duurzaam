@@ -1,4 +1,3 @@
-
 /* ======================
   MAIN STYLES
   ====================== */
@@ -87,8 +86,9 @@ header nav a:hover {
 .deze_pagina {
     text-decoration: underline;
 }
+
 /* ======================
-  ADMIN NAVBAR 
+  ADMIN NAVBAR
 ====================== */
 
 .admin-navbar {
@@ -377,74 +377,68 @@ header nav a:hover {
   DASHBOARD STYLES
 ====================== */
 
-    .dashboard {
-        padding: 30px 40px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+.dashboard {
+    padding: 30px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    .dashboard-content {
-        background-color: white;
-        border: 2px solid black;
-        border-radius: 10px;
-        padding: 25px 30px;
-        flex: 1 1 calc(50% - 10px);
-        box-shadow: 0 4px 8px #00000033;;
-    }
-    
-    .dashboard-content h1 {
-        font-weight: bold;
-        padding-bottom: 10px;
-    }
+.dashboard-content {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 25px 30px;
+    flex: 1 1 calc(50% - 10px);
+    box-shadow: 0 4px 8px #00000033;
+}
 
-    .dashboard-content p {
-        font-size: 0.9em;
-        font-weight: normal;
-        padding-bottom: 15px;
-    }
+.dashboard-content h1 {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
 
-    .dashboard-content a {
-        display: block;
-        background-color: #18126b;
-        color: white;
-        padding: 18px 15px;
-        border-radius: 30px;
-        text-decoration: none;
-        width: 70%;
-        box-sizing: border-box;
-        transition: 0.2s ease-in-out;
-    }
+.dashboard-content p {
+    font-size: 0.9em;
+    font-weight: normal;
+    padding-bottom: 15px;
+}
 
-    .dashboard-content a:hover {
-        background-color: #18126b;
-        color: white;
-        border-color: #18126b;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(24, 18, 107, 0.3);
-    }
-    .voorraad{
-        text-align: center;
-    }
+.dashboard-content a {
+    display: block;
+    background-color: #18126b;
+    color: white;
+    padding: 18px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: 70%;
+    box-sizing: border-box;
+    transition: 0.2s ease-in-out;
+}
 
+.dashboard-content a:hover {
+    background-color: #18126b;
+    color: white;
+    border-color: #18126b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(24, 18, 107, 0.3);
+}
 
+.voorraad {
+    text-align: center;
+}
 
-    .Voorraadpar{
-        margin-top: 20px;
-        font-size: 18px;
-    }
+.Voorraadpar {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
 
 /* ======================
   VOORRAAD STYLES
 ====================== */
 
-
 :root {
-    --admin-width: 200px; /* keep in sync with .admin-navbar */
-    --content-offset: calc(var(--admin-width) + 60px); /* left gap from navbar */
-    --content-max-width: 1200px;
-    --content-right-gap: 40px;
-}
 
 /* Zorg dat alle voorraad elementen rechts van de zijbalk beginnen */
 .ritten-header,
@@ -506,19 +500,15 @@ header nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 28px 20px;
-    background-color: white;
-    box-shadow: none;
     padding: 20px 40px;
     background-color: white;
+    box-shadow: none;
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 .voorraad-header h1 {
     margin: 0;
-
     font-size: 28px;
     color: #333;
     font-weight: 600;
@@ -535,6 +525,7 @@ header nav a:hover {
     font-size: 14px;
     font-weight: 600;
     box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    transition: background-color 0.2s;
 }
 
 .toggle-btn:hover {
@@ -546,16 +537,7 @@ header nav a:hover {
     margin-top: 8px;
     width: calc(100% - 0px);
     border-collapse: separate;
-    border-spacing: 0 18px; /* verticale afstand tussen rijen */
-
-}
-
-.voorraad-table {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
-    border-collapse: collapse;
-
+    border-spacing: 0 18px;
 }
 
 .voorraad-table thead th {
@@ -606,26 +588,6 @@ header nav a:hover {
 .paginatie-btn { background: none; border: none; cursor: pointer; color: #666; padding: 5px 10px; }
 .paginatie-btn:hover { color: #333; }
 
-.pagination {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.paginatie-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    padding: 5px 10px;
-    transition: color 0.2s;
-}
-
-.paginatie-btn:hover {
-    color: #333;
-}
-
-
 /* ======================
   FORMULIER STYLES
 ====================== */
@@ -646,20 +608,22 @@ header nav a:hover {
     display: block;
 }
 
+/* Toggle Button */
 .toggle-btn {
-    padding: 10px 20px;
-    background-color: #7c5cc1;
-    color: white;
+    padding: 8px 14px;
+    background-color: #d3c6ee;
+    color: #2d1f5a;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
     transition: background-color 0.2s;
 }
 
 .toggle-btn:hover {
-    background-color: #6b4aaa;
+    background-color: #c3b6e8;
 }
 
 .form-group {
@@ -924,10 +888,8 @@ header nav a:hover {
     border-radius: 4px;
 }
 
-.Voorraadpar{
-   text-align: center;
-
-
+.Voorraadpar {
+    text-align: center;
 }
 
 

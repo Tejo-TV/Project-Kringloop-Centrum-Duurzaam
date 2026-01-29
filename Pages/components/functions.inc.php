@@ -90,6 +90,28 @@ function updateGebruiker($conn, $id, $gebruiker, $ww) {
 }
 
 // ----------------------------------------------------
+// Maak medewerker
+// ----------------------------------------------------
+function maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
+ 
+    $sql = "INSERT INTO gebruiker (gebruikersnaam, wachtwoord, rollen, is_geverifieerd) VALUES (:gebruikersnaam, :wachtwoord, :rollen, :is_geverifieerd)";
+ 
+    $stmt = $conn->prepare($sql);
+ 
+    // Wachtwoord hashen
+    $wwHashed = hash('sha256', $wachtwoord);
+ 
+    $stmt->execute([
+        ':gebruikersnaam' => $gebruikersnaam,
+            ':wachtwoord' => $wwHashed,
+            ':rollen' => $rollen,
+            ':is_geverifieerd' => $is_geverifieerd
+    ]);
+    echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
+    exit();
+}
+
+// ----------------------------------------------------
 // Haal alle ritten op
 // ----------------------------------------------------
 function Ritten($conn){
@@ -217,8 +239,13 @@ function haalAlleStatuses($conn) {
 function haalAlleCategorien($conn) {
     $sql = "SELECT * FROM categorie";
     $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+// ----------------------------------------------------
 // Create Rit
+// ----------------------------------------------------
 function createRit($conn, $artikel_id, $klant_id, $kenteken, $ophalen_of_bezorgen, $afspraak_op) {
     $stmt = $conn->prepare(
         "INSERT INTO planning (artikel_id, klant_id, kenteken, ophalen_of_bezorgen, afspraak_op) 
@@ -232,7 +259,9 @@ function createRit($conn, $artikel_id, $klant_id, $kenteken, $ophalen_of_bezorge
     return $stmt->execute();
 }
 
-// Edit Rit
+// ----------------------------------------------------
+// Update Rit
+// ----------------------------------------------------
 function updateRit($conn, $id, $artikel_id, $klant_id, $kenteken, $ophalen_of_bezorgen, $afspraak_op) {
     $stmt = $conn->prepare(
         "UPDATE planning SET artikel_id = :artikel_id, klant_id = :klant_id, 
@@ -247,13 +276,19 @@ function updateRit($conn, $id, $artikel_id, $klant_id, $kenteken, $ophalen_of_be
     $stmt->bindParam(":afspraak_op", $afspraak_op);
     return $stmt->execute();
 }
+
+// ----------------------------------------------------
 // Delete Rit
+// ----------------------------------------------------
 function deleteRit($conn, $id) {
     $stmt = $conn->prepare("DELETE FROM planning WHERE id = :id");
     $stmt->bindParam(":id", $id);
     return $stmt->execute();
 }
+
+// ----------------------------------------------------
 // Haal Rit op met ID
+// ----------------------------------------------------
 function getRitById($conn, $id) {
     $stmt = $conn->prepare(
         "SELECT planning.id, planning.artikel_id, planning.klant_id, planning.kenteken, 
@@ -275,28 +310,4 @@ function haalAlleKlanten($conn) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-
-// ----------------------------------------------------
-// Create gebruiker
-// ----------------------------------------------------
-
-function maakMedewerker($conn, $gebruikersnaam, $wachtwoord, $rollen, $is_geverifieerd) {
- 
-    $sql = "INSERT INTO gebruiker (gebruikersnaam, wachtwoord, rollen, is_geverifieerd) VALUES (:gebruikersnaam, :wachtwoord, :rollen, :is_geverifieerd)";
- 
-    $stmt = $conn->prepare($sql);
- 
-    // Wachtwoord hashen
-    $wwHashed = hash('sha256', $wachtwoord);
- 
-    $stmt->execute([
-        ':gebruikersnaam' => $gebruikersnaam,
-            ':wachtwoord' => $wwHashed,
-            ':rollen' => $rollen,
-            ':is_geverifieerd' => $is_geverifieerd
-    ]);
-    echo "<script>window.location.href = '../dashboard.php?error=none';</script>";
-    exit();
-}
 ?>

@@ -1,7 +1,7 @@
 <?php
 //---------------------------------------------------------------------------------------------------//
-// Naam script       : dashboard.php
-// Omschrijving      : Dit is de dashboard pagina van het Kringloop Centrum Duurzaam
+// Naam script       : instellingen.php
+// Omschrijving      : Dit is de instellingen pagina van het Kringloop Centrum Duurzaam
 // Naam ontwikkelaar : Groep D
 // Project           : Kringloop Centrum Duurzaam
 // Datum             : 28-01-2026
@@ -77,23 +77,23 @@ $username = $row['gebruikersnaam'];
         </nav>
     </header>
 
-        <!-- body -->
-        </div class="login-container">
+        <!-- Body -->
+        <div class="login-container">
             <div class="login-form">
-                <h2>User Form</h2>
+                <h2>Instellingen</h2>
 
                 <form action="components/setting.inc.php" method="POST">
 
                     <!-- Gebruikersnaam -->
                     <div class="input-group">
                         <label>Gebruikersnaam:</label>
-                        <input type="text" name="gebruiker" value="<?php echo $username; ?>" placeholder="Enter your gebruikersnaam" />
+                        <input type="text" name="gebruiker" value="<?php echo $username; ?>" placeholder="Voer je gebruikersnaam in" />
                     </div>
 
                     <!-- Wachtwoord -->
                     <div class="input-group">
                         <label>Wachtwoord:</label>
-                        <input type="password" name="new_ww" placeholder="Enter your password" minlength="8" />
+                        <input type="password" name="new_ww" placeholder="Voer je wachtwoord in (optioneel)" minlength="8" />
                     </div>
 
                     <!-- Geeft de userid mee -->
@@ -101,7 +101,7 @@ $username = $row['gebruikersnaam'];
 
                     <!-- Update settings Button -->
                     <div class="button-row">
-                        <button type="submit" name="update_settings" class="login-btn">Update settings</button>
+                        <button type="submit" name="update_settings" class="login-btn">Instellingen opslaan</button>
                     </div>
                 </form>
             </div>
